@@ -148,6 +148,16 @@ class TrunemoTests(TestCase):
         self.assertEqual(workbook.sheetnames, ["Payments", "Statistics"])
         self.assertEqual(workbook["Payments"]["D2"].value, 120.25)
         self.assertEqual(workbook["Payments"].max_row, 3)
+        self.assertEqual(workbook["Payments"]["C2"].alignment.readingOrder, 0)
+
+        hebrew_response = self.client.get(
+            reverse("event_export", args=[event.pk]), HTTP_ACCEPT_LANGUAGE="he",
+        )
+        hebrew_sheet = load_workbook(BytesIO(b"".join(hebrew_response.streaming_content))).active
+        self.assertTrue(hebrew_sheet.sheet_view.rightToLeft)
+        self.assertEqual(hebrew_sheet["C2"].value, workbook["Payments"]["C2"].value)
+        self.assertEqual(hebrew_sheet["C2"].alignment.horizontal, "right")
+        self.assertEqual(hebrew_sheet["C2"].alignment.readingOrder, 2)
 
         payment = gift.payments.order_by("pk").first()
         payment_args = [*gift_args, payment.pk]

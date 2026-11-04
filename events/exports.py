@@ -19,7 +19,9 @@ def event_workbook(event, gifts, method, currency=""):
     workbook = Workbook()
     sheet = workbook.active
     sheet.title = _("Payments")
-    sheet.sheet_view.rightToLeft = get_language_bidi()
+    rtl = get_language_bidi()
+    sheet.sheet_view.rightToLeft = rtl
+    people_alignment = Alignment(wrap_text=True, horizontal="right", readingOrder=2) if rtl else Alignment(wrap_text=True)
     sheet.append([_("Group name"), _("Payer name"), _("Number of people"), _("Amount"), _("Payment method")])
     for payment in payments:
         covered = list(payment.covered_guests.all())
@@ -33,7 +35,7 @@ def event_workbook(event, gifts, method, currency=""):
         for column in ("A", "B", "E"):
             sheet[f"{column}{sheet.max_row}"].data_type = "s"
         sheet[f"D{sheet.max_row}"].number_format = currency_format(payment.get_currency_display())
-        sheet[f"C{sheet.max_row}"].alignment = Alignment(wrap_text=True)
+        sheet[f"C{sheet.max_row}"].alignment = people_alignment
 
     sheet.freeze_panes = "A2"
     sheet.auto_filter.ref = sheet.dimensions
