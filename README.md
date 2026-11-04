@@ -25,7 +25,7 @@ Trunemo started with a real request: a close friend preparing for her wedding wa
 
 That idea grew into a **flexible event-management platform**. Users can create their own events, organize guests into groups, record gifts and individual payments, view totals, and export the information to Excel. There is no need to choose from a predefined list of event categories.
 
-The project was built as a personal learning and portfolio project by **Shiran Kidron**, a B.Sc. Information Systems student at the **University of Haifa**. It is currently available as a **free public beta**.
+The project was built as a personal learning and portfolio project by **Shiran Kidron**, a B.Sc. Information Systems student.
 
 ## ✨ Features
 
