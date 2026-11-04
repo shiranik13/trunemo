@@ -77,7 +77,7 @@ Export readable spreadsheets with payment details and summary statistics.
 <table>
   <tr>
     <td width="50%"><strong>Statistics worksheet</strong></td>
-    <td width="50%"><strong>Payments worksheet</strong></td>
+    <td width="80%"><strong>Payments worksheet</strong></td>
   </tr>
   <tr>
     <td><img src="docs/screenshots/excel-statistics.png" alt="Excel statistics worksheet"></td>
