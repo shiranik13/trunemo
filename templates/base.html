@@ -8,6 +8,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Trunemo{% endblock %}</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Trunemo">
+    <meta property="og:description" content="{% translate 'Keep guests, gifts and split payments together. See what each event received and export the details to Excel.' %}">
+    <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'events/trunemo-share.png' %}">
+    <meta property="og:image:alt" content="Trunemo">
     <link rel="icon" type="image/png" href="{% static 'events/app-icon.png' %}?v=2">
     <link rel="preload" as="image" href="{% static 'events/app-icon.png' %}?v=2">
     <link rel="stylesheet" href="{% static 'events/style.css' %}?v=31">
