@@ -1,0 +1,27 @@
+{% load i18n %}
+<fieldset class="group-guest-entry" data-guest-row>
+    <div data-guest-details>
+        {{ entry.name.as_field_group }}
+        {{ entry.payer.errors }}
+        <label class="payer-check" for="{{ entry.payer.id_for_label }}">{{ entry.payer }} {{ entry.payer.label }}</label>
+    </div>
+    <div data-guest-payment>
+        <strong data-payer-name>{{ entry.name.value|default_if_none:"" }}</strong>
+        <div class="group-payment-fields">
+            <div>{{ entry.amount.as_field_group }}</div><div>{{ entry.currency.as_field_group }}</div>
+            <div>{{ entry.method.as_field_group }}</div>
+        </div>
+        {% for amount, method, currency in entry.extra_payments %}
+            <div class="group-payment-fields" data-extra-payment{% if not amount.value and not method.value and not amount.errors and not method.errors %} hidden{% endif %}>
+                <div>{{ amount.as_field_group }}</div><div>{{ currency.as_field_group }}</div>
+                <div>{{ method.as_field_group }}</div>
+            </div>
+        {% endfor %}
+        <button type="button" class="secondary" data-add-payment hidden>{% translate "Add another payment method" %}</button>
+        <fieldset data-covered data-field-name="{{ entry.covered.html_name }}">
+            <legend>{{ entry.covered.label }}</legend>
+            {{ entry.covered.errors }}
+            <div data-covered-options>{{ entry.covered }}</div>
+        </fieldset>
+    </div>
+</fieldset>

@@ -1,0 +1,636 @@
+msgid ""
+msgstr "Project-Id-Version: Trunemo\nLanguage: ru\nContent-Type: text/plain; charset=UTF-8\n"
+
+msgid "A little about the site 🐘💜"
+msgstr "Немного о сайте 🐘💜"
+
+msgid "A little calm after the celebration"
+msgstr "Немного спокойствия после праздника"
+
+msgid "About the site"
+msgstr "О сайте"
+
+msgid "Across all recorded payments"
+msgstr "По всем записанным платежам"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Add a group such as Family or Friends, then add the guests who belong to it."
+msgstr "Создайте группу, например «Семья» или «Друзья», а затем добавьте в неё гостей."
+
+msgid "Add a guest group before exporting the guest list."
+msgstr "Добавьте группу гостей, чтобы экспортировать список гостей."
+
+msgid "Add another payment method"
+msgstr "Добавить способ оплаты"
+
+msgid "Add event"
+msgstr "Добавить событие"
+
+msgid "Add gift"
+msgstr "Добавить подарок"
+
+msgid "Add group"
+msgstr "Добавить группу"
+
+msgid "Add guest"
+msgstr "Добавить гостя"
+
+msgid "Add payment"
+msgstr "Добавить платёж"
+
+msgid "All balanced!"
+msgstr "Всё сошлось!"
+
+msgid "All currencies"
+msgstr "Все валюты"
+
+msgid "All events"
+msgstr "Все события"
+
+msgid "All groups"
+msgstr "Все группы"
+
+msgid "All payment methods"
+msgstr "Все способы оплаты"
+
+msgid "All rights reserved"
+msgstr "Все права защищены"
+
+msgid "Although the idea started with one wedding, I decided to make the site useful for any kind of event. The goal is to make managing guests, groups and gifts simple, convenient and accessible for everyone."
+msgstr "Хотя всё началось с одной свадьбы, я решила сделать сайт полезным для любых мероприятий. Мне хотелось, чтобы каждый мог просто и удобно вести списки гостей, групп и подарков."
+
+msgid "Amount"
+msgstr "Сумма"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "As simple as it sounds."
+msgstr "Проще, чем кажется."
+
+msgid "Automatic"
+msgstr "Автоматически"
+
+msgid "Baby celebration"
+msgstr "Праздник в честь рождения"
+
+msgid "Back to guests"
+msgstr "Вернуться к гостям"
+
+msgid "Back to home"
+msgstr "Вернуться на главную"
+
+msgid "Bank transfer"
+msgstr "Банковский перевод"
+
+msgid "Birthday"
+msgstr "День рождения"
+
+msgid "Breadcrumb"
+msgstr "Навигационная цепочка"
+
+msgid "Briefcase"
+msgstr "Портфель"
+
+msgid "Calendar"
+msgstr "Календарь"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Cash"
+msgstr "Наличные"
+
+msgid "Check"
+msgstr "Чек"
+
+msgid "Choose a group"
+msgstr "Выберите группу"
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Cohen family"
+msgstr "Семья Коэн"
+
+msgid "Confetti"
+msgstr "Конфетти"
+
+msgid "Confirm deletion"
+msgstr "Подтверждение удаления"
+
+msgid "Continue to payments"
+msgstr "Перейти к платежам"
+
+msgid "Contributed money"
+msgstr "Внёс вклад"
+
+msgid "Create a guest group"
+msgstr "Создайте группу гостей"
+
+msgid "Create account"
+msgstr "Создать аккаунт"
+
+msgid "Create an account"
+msgstr "Создайте аккаунт"
+
+msgid "Create an event to organize guests and record gifts."
+msgstr "Создайте событие, чтобы добавить гостей и записать подарки."
+
+msgid "Credit card"
+msgstr "Банковская карта"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Daniel"
+msgstr "Даниэль"
+
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete %(record)s?"
+msgstr "Удалить «%(record)s»?"
+
+msgid "Delete event"
+msgstr "Удалить событие"
+
+msgid "Delete gift"
+msgstr "Удалить подарок"
+
+msgid "Delete group"
+msgstr "Удалить группу"
+
+msgid "Download the event summary and its payment details."
+msgstr "Скачивайте сводку по событию и данные о платежах."
+
+msgid "Draft terms for the Trunemo prototype."
+msgstr "Проект условий использования прототипа Trunemo."
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "Edit event"
+msgstr "Редактировать событие"
+
+msgid "Edit gift"
+msgstr "Редактировать подарок"
+
+msgid "Edit group"
+msgstr "Редактировать группу"
+
+msgid "Edit guest"
+msgstr "Редактировать гостя"
+
+msgid "Edit payment"
+msgstr "Редактировать платёж"
+
+msgid "Emma and Oliver"
+msgstr "Анна и Михаил"
+
+msgid "Enter guest names and mark who contributed money."
+msgstr "Введите имена гостей и отметьте, кто внёс вклад."
+
+msgid "Enter the guest names. If a gift has already been received, mark who contributed."
+msgstr "Введите имена гостей. Если подарок уже получен, отметьте, кто участвовал в оплате."
+
+msgid "Event actions"
+msgstr "Действия с событием"
+
+msgid "Event date"
+msgstr "Дата события"
+
+msgid "Event details"
+msgstr "Детали события"
+
+msgid "Event directory"
+msgstr "Каталог событий"
+
+msgid "Event icon"
+msgstr "Значок события"
+
+msgid "Event notes"
+msgstr "Заметки о событии"
+
+msgid "Event summary"
+msgstr "Сводка события"
+
+msgid "Event type"
+msgstr "Тип события"
+
+msgid "Events"
+msgstr "События"
+
+msgid "Every gift,"
+msgstr "Каждый подарок"
+
+msgid "Export Excel"
+msgstr "Экспорт в Excel"
+
+msgid "Export guest list to Excel"
+msgstr "Экспорт списка гостей в Excel"
+
+msgid "Export to Excel"
+msgstr "Экспорт в Excel"
+
+msgid "Filter by payment method"
+msgstr "Фильтр по способу оплаты"
+
+msgid "First payment"
+msgstr "Первый платёж"
+
+msgid "Flag"
+msgstr "Флаг"
+
+msgid "Footer navigation"
+msgstr "Навигация внизу страницы"
+
+msgid "Gathering"
+msgstr "Встреча"
+
+msgid "Gift"
+msgstr "Подарок"
+
+msgid "Gift #%(number)s"
+msgstr "Подарок № %(number)s"
+
+msgid "Gift ledger"
+msgstr "Журнал подарков"
+
+msgid "Gifts"
+msgstr "Подарки"
+
+msgid "Graduation"
+msgstr "Выпускной"
+
+msgid "Group icon"
+msgstr "Значок группы"
+
+msgid "Group name"
+msgstr "Название группы"
+
+msgid "Group notes"
+msgstr "Заметки о группе"
+
+msgid "Guest groups"
+msgstr "Группы гостей"
+
+msgid "Guest list"
+msgstr "Список гостей"
+
+msgid "Guests"
+msgstr "Гости"
+
+msgid "Heart"
+msgstr "Сердце"
+
+msgid "Home"
+msgstr "Дом"
+
+msgid "How it works"
+msgstr "Как это работает"
+
+msgid "I hope it helps you stay organized, save time and make managing your event simpler and more pleasant."
+msgstr "Надеюсь, сайт поможет вам навести порядок, сэкономить время и сделать подготовку к мероприятию проще и приятнее."
+
+msgid "I study information systems at the University of Haifa and love technology, software development and learning new things. Her request gave me a chance to help a close friend, challenge myself, gain hands-on experience and grow my portfolio."
+msgstr "Я изучаю информационные системы в Хайфском университете и люблю технологии, разработку ПО и всё новое. В её просьбе я увидела возможность помочь близкой подруге, бросить себе вызов, получить практический опыт и пополнить портфолио."
+
+msgid "It all started with a close friend who was getting married."
+msgstr "Всё началось с того, что моя близкая подруга выходила замуж."
+
+msgid "It's really easy!"
+msgstr "Это совсем просто!"
+
+msgid "James"
+msgstr "Александр"
+
+msgid "Keep each event’s guest list grouped in one place."
+msgstr "Храните список гостей каждого события в одном месте и делите его на группы."
+
+msgid "Keep guests, gifts and split payments together. See what each event received and export the details to Excel."
+msgstr "Управляйте гостями, подарками и частичными платежами в одном месте. Смотрите итоги по событиям и экспортируйте данные в Excel."
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Last edited"
+msgstr "Последнее изменение"
+
+msgid "Last edited event"
+msgstr "Последнее изменённое событие"
+
+msgid "Latest event"
+msgstr "Последнее добавленное событие"
+
+msgid "Let me check…"
+msgstr "Сейчас проверю…"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Main navigation"
+msgstr "Основная навигация"
+
+msgid "Manage event"
+msgstr "Управление событием"
+
+msgid "Manage guests and track what each celebration received."
+msgstr "Управляйте гостями и следите за подарками по каждому событию."
+
+msgid "Matching gifts"
+msgstr "Найдено подарков"
+
+msgid "Most recently added event"
+msgstr "Последнее добавленное событие"
+
+msgid "Music"
+msgstr "Музыка"
+
+msgid "My account"
+msgstr "Мой аккаунт"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "New here?"
+msgstr "Впервые здесь?"
+
+msgid "No edit recorded yet"
+msgstr "Изменений пока не было"
+
+msgid "No email address saved"
+msgstr "Адрес электронной почты не указан"
+
+msgid "No gifts recorded yet"
+msgstr "Подарков пока нет"
+
+msgid "No guests yet."
+msgstr "Гостей пока нет."
+
+msgid "No matching events"
+msgstr "События не найдены"
+
+msgid "No matching gifts"
+msgstr "Подарки не найдены"
+
+msgid "No payments recorded. Add each part of a split payment separately."
+msgstr "Платежей пока нет. Добавляйте каждую часть платежа отдельно."
+
+msgid "Noa and Alon"
+msgstr "Ноа и Алон"
+
+msgid "None selected"
+msgstr "Никто не выбран"
+
+msgid "Note"
+msgstr "Заметка"
+
+msgid "Note (optional)"
+msgstr "Заметка (необязательно)"
+
+msgid "Now for the easy part."
+msgstr "Теперь всё по порядку."
+
+msgid "Number of people"
+msgstr "Количество человек"
+
+msgid "One more entry…"
+msgstr "Ещё одна строка…"
+
+msgid "Only enter information you are authorized to use. Keep passwords and card details out of event records."
+msgstr "Вводите только данные, которые вы вправе использовать. Не сохраняйте пароли и реквизиты карт в записях событий."
+
+msgid "Open event"
+msgstr "Открыть событие"
+
+msgid "Organize guests"
+msgstr "Управление гостями"
+
+msgid "Other"
+msgstr "Другое"
+
+msgid "Paid for"
+msgstr "Оплатил за"
+
+msgid "Payer"
+msgstr "Плательщик"
+
+msgid "Payer name"
+msgstr "Имя плательщика"
+
+msgid "Payment app"
+msgstr "Платёжное приложение"
+
+msgid "Payment breakdown"
+msgstr "Разбивка по способам оплаты"
+
+msgid "Payment method"
+msgstr "Способ оплаты"
+
+msgid "Payment methods will appear here when you record a gift."
+msgstr "Способы оплаты появятся здесь после записи подарка."
+
+msgid "Payment summary"
+msgstr "Сводка по платежам"
+
+msgid "Payments"
+msgstr "Платежи"
+
+msgid "People"
+msgstr "Люди"
+
+msgid "Pick at random"
+msgstr "Выбрать случайно"
+
+msgid "Ready to get your gifts in order?"
+msgstr "Готовы навести порядок с подарками?"
+
+msgid "Recent gifts"
+msgstr "Последние подарки"
+
+msgid "Recipients"
+msgstr "Получатели"
+
+msgid "Record who paid, how they paid, and how much."
+msgstr "Записывайте, кто, как и сколько заплатил."
+
+msgid "Related records may also be deleted. This action is permanent."
+msgstr "Связанные записи тоже могут быть удалены. Это действие необратимо."
+
+msgid "Review exported files before sharing them because they may contain guest names and gift amounts."
+msgstr "Проверяйте файлы перед отправкой: в них могут быть имена гостей и суммы подарков."
+
+msgid "Sample data"
+msgstr "Данные для примера"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save and add another gift"
+msgstr "Сохранить и добавить ещё подарок"
+
+msgid "Save gift"
+msgstr "Сохранить подарок"
+
+msgid "Save group without payments"
+msgstr "Сохранить группу без платежей"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Search by event name"
+msgstr "Поиск по названию события"
+
+msgid "Search by event name or type"
+msgstr "Поиск по названию или типу события"
+
+msgid "Search events"
+msgstr "Поиск событий"
+
+msgid "Search gifts"
+msgstr "Поиск подарков"
+
+msgid "Search gifts, guests or payers"
+msgstr "Поиск подарков, гостей или плательщиков"
+
+msgid "See an example"
+msgstr "Пример работы"
+
+msgid "See how much came in and who paid."
+msgstr "Видно, кто и сколько подарил."
+
+msgid "Show fewer icons"
+msgstr "Свернуть список значков"
+
+msgid "Show more icons"
+msgstr "Показать больше значков"
+
+msgid "Skip to content"
+msgstr "Перейти к содержанию"
+
+msgid "Star"
+msgstr "Звезда"
+
+msgid "Star of David"
+msgstr "Звезда Давида"
+
+msgid "Start with your first event"
+msgstr "Начните с первого события"
+
+msgid "Statistics"
+msgstr "Статистика"
+
+msgid "Terms of use"
+msgstr "Условия использования"
+
+msgid "Thank you for using it! 💜"
+msgstr "Спасибо, что пользуетесь сайтом! 💜"
+
+msgid "That is how the idea for this site was born."
+msgstr "Так родилась идея этого сайта."
+
+msgid "The GitHub link will be available when the code is published."
+msgstr "Ссылка на GitHub появится после публикации кода."
+
+msgid "The Miller family"
+msgstr "Семья Ивановых"
+
+msgid "The party is over."
+msgstr "Праздник закончился."
+
+msgid "The project was built as a portfolio project using Python and Django."
+msgstr "Сайт создан как проект для портфолио с использованием Python и Django."
+
+msgid "This record contains a payer linked to another gift. Update that payment first."
+msgstr "В записи есть плательщик, связанный с другим подарком. Сначала измените связанный платёж."
+
+msgid "This site was built with love, and it is completely free."
+msgstr "Этот сайт сделан с любовью и совершенно бесплатен."
+
+msgid "Toast"
+msgstr "Тост"
+
+msgid "Total events"
+msgstr "Всего событий"
+
+msgid "Total for matching gifts"
+msgstr "Сумма найденных подарков"
+
+msgid "Total gifts received"
+msgstr "Сумма полученных подарков"
+
+msgid "Total received"
+msgstr "Всего получено"
+
+msgid "Track split payments"
+msgstr "Учёт частичных платежей"
+
+msgid "Trunemo helps you organize guests, record monetary gifts and split payments, and export an event summary to Excel."
+msgstr "Trunemo помогает организовать списки гостей, записывать денежные подарки и раздельные платежи и экспортировать итоги события в Excel."
+
+msgid "Try a different name or"
+msgstr "Попробуйте другое название или"
+
+msgid "Try another search or"
+msgstr "Попробуйте другой запрос или"
+
+msgid "Use Add gift to record the first payment."
+msgstr "Нажмите «Добавить подарок», чтобы записать первый платёж."
+
+msgid "Use Trunemo to record gifts. Actual payments take place outside the site."
+msgstr "Trunemo предназначен для учёта подарков. Сами платежи проходят за пределами сайта."
+
+msgid "Venue"
+msgstr "Место проведения"
+
+msgid "View guests & manage"
+msgstr "Просмотр и управление гостями"
+
+msgid "Want to see how the site was built? Take a look at the code."
+msgstr "Хотите узнать, как сделан сайт? Загляните в исходный код."
+
+msgid "Wedding"
+msgstr "Свадьба"
+
+msgid "When my best friend started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
+msgstr "Когда моя лучшая подруга начала планировать свадьбу, ей хотелось найти простой, удобный и приятный способ вести список гостей и подарков. Вместо бесконечных таблиц Excel ей нужно было одно место, где всё можно аккуратно собрать."
+
+msgid "While building the site, I tried technologies and tools I had never used before, including <strong>Django, PostgreSQL and Figma</strong>. It took independent study, trial and error, problem solving and plenty of patience. Most of all, I enjoyed turning a small idea into a real product."
+msgstr "В процессе разработки я познакомилась с новыми для себя технологиями и инструментами, в том числе с <strong>Django, PostgreSQL и Figma</strong>. Понадобились самостоятельная учёба, пробы и ошибки, решение задач и терпение. Больше всего мне понравилось превращать небольшую идею в настоящий продукт."
+
+msgid "Why Trunemo"
+msgstr "Почему Trunemo"
+
+msgid "You can save the group now and record gifts and payments later using Add gift in the group menu."
+msgstr "Группу можно сохранить сейчас, а подарки и платежи записать позже через пункт «Добавить подарок» в меню группы."
+
+msgid "Your event gift ledger"
+msgstr "Журнал подарков для ваших событий"
+
+msgid "Your events"
+msgstr "Ваши события"
+
+msgid "Your gift ledger is ready"
+msgstr "Ваш журнал подарков готов"
+
+msgid "Your workspace"
+msgstr "Ваше рабочее пространство"
+
+msgid "accounted for."
+msgstr "на учёте."
+
+msgid "clear the filter"
+msgstr "сбросьте фильтр"
+
+msgid "to record your first gift."
+msgstr "чтобы записать первый подарок."
+

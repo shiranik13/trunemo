@@ -1,0 +1,636 @@
+msgid ""
+msgstr "Project-Id-Version: Trunemo\nLanguage: he\nContent-Type: text/plain; charset=UTF-8\n"
+
+msgid "A little about the site 🐘💜"
+msgstr "קצת על האתר 🐘💜"
+
+msgid "A little calm after the celebration"
+msgstr "כי אחרי האירוע מגיע השקט"
+
+msgid "About the site"
+msgstr "אודות האתר"
+
+msgid "Across all recorded payments"
+msgstr "לפי כל התשלומים שנרשמו"
+
+msgid "Actions"
+msgstr "פעולות"
+
+msgid "Add a group such as Family or Friends, then add the guests who belong to it."
+msgstr "צרו קבוצה, למשל משפחה או חברים, ואז הוסיפו אליה את האורחים."
+
+msgid "Add a guest group before exporting the guest list."
+msgstr "אי אפשר לייצא את רשימת האורחים כרגע כי עדיין אין קבוצות אורחים."
+
+msgid "Add another payment method"
+msgstr "הוספת אמצעי תשלום נוסף"
+
+msgid "Add event"
+msgstr "הוספת אירוע"
+
+msgid "Add gift"
+msgstr "הוספת מתנה"
+
+msgid "Add group"
+msgstr "הוספת קבוצה"
+
+msgid "Add guest"
+msgstr "הוספת אורח"
+
+msgid "Add payment"
+msgstr "הוספת תשלום"
+
+msgid "All balanced!"
+msgstr "הכול מסתדר!"
+
+msgid "All currencies"
+msgstr "כל המטבעות"
+
+msgid "All events"
+msgstr "כל האירועים"
+
+msgid "All groups"
+msgstr "כל הקבוצות"
+
+msgid "All payment methods"
+msgstr "כל אמצעי התשלום"
+
+msgid "All rights reserved"
+msgstr "כל הזכויות שמורות"
+
+msgid "Although the idea started with one wedding, I decided to make the site useful for any kind of event. The goal is to make managing guests, groups and gifts simple, convenient and accessible for everyone."
+msgstr "למרות שהרעיון התחיל מחתונה אחת, החלטתי לא להגביל את האתר לסוג מסוים של אירוע. המטרה היא לאפשר לכל אחת ואחד לנהל מוזמנים, קבוצות ומתנות בצורה פשוטה, נוחה ונגישה."
+
+msgid "Amount"
+msgstr "סכום"
+
+msgid "Apply"
+msgstr "החלפה"
+
+msgid "As simple as it sounds."
+msgstr "פשוט כמו שזה נשמע."
+
+msgid "Automatic"
+msgstr "אוטומטי"
+
+msgid "Baby celebration"
+msgstr "חגיגת לידה"
+
+msgid "Back to guests"
+msgstr "חזרה לאורחים"
+
+msgid "Back to home"
+msgstr "חזרה לדף הבית"
+
+msgid "Bank transfer"
+msgstr "העברה בנקאית"
+
+msgid "Birthday"
+msgstr "יום הולדת"
+
+msgid "Breadcrumb"
+msgstr "נתיב ניווט"
+
+msgid "Briefcase"
+msgstr "תיק עבודה"
+
+msgid "Calendar"
+msgstr "לוח שנה"
+
+msgid "Cancel"
+msgstr "ביטול"
+
+msgid "Cash"
+msgstr "מזומן"
+
+msgid "Check"
+msgstr "המחאה"
+
+msgid "Choose a group"
+msgstr "בחרו קבוצה"
+
+msgid "Clear"
+msgstr "ניקוי"
+
+msgid "Cohen family"
+msgstr "משפחת כהן"
+
+msgid "Confetti"
+msgstr "קונפטי"
+
+msgid "Confirm deletion"
+msgstr "אישור מחיקה"
+
+msgid "Continue to payments"
+msgstr "המשך לתשלומים"
+
+msgid "Contributed money"
+msgstr "השתתף בתשלום"
+
+msgid "Create a guest group"
+msgstr "צרו קבוצת אורחים"
+
+msgid "Create account"
+msgstr "יצירת חשבון"
+
+msgid "Create an account"
+msgstr "צרו חשבון"
+
+msgid "Create an event to organize guests and record gifts."
+msgstr "צרו אירוע כדי לנהל אורחים ולרשום מתנות."
+
+msgid "Credit card"
+msgstr "כרטיס אשראי"
+
+msgid "Currency"
+msgstr "מטבע"
+
+msgid "Daniel"
+msgstr "דניאל"
+
+msgid "Dashboard"
+msgstr "לוח בקרה"
+
+msgid "Delete"
+msgstr "מחיקה"
+
+msgid "Delete %(record)s?"
+msgstr "למחוק את %(record)s?"
+
+msgid "Delete event"
+msgstr "מחיקת אירוע"
+
+msgid "Delete gift"
+msgstr "מחיקת מתנה"
+
+msgid "Delete group"
+msgstr "מחיקת קבוצה"
+
+msgid "Download the event summary and its payment details."
+msgstr "הורידו את סיכום האירוע ואת פרטי התשלומים."
+
+msgid "Draft terms for the Trunemo prototype."
+msgstr "טיוטת תנאי שימוש לאב-הטיפוס של Trunemo."
+
+msgid "Edit"
+msgstr "עריכה"
+
+msgid "Edit event"
+msgstr "עריכת אירוע"
+
+msgid "Edit gift"
+msgstr "עריכת מתנה"
+
+msgid "Edit group"
+msgstr "עריכת קבוצה"
+
+msgid "Edit guest"
+msgstr "עריכת אורח"
+
+msgid "Edit payment"
+msgstr "עריכת תשלום"
+
+msgid "Emma and Oliver"
+msgstr "נועה ואלון"
+
+msgid "Enter guest names and mark who contributed money."
+msgstr "הזינו את שמות האורחים וסמנו מי השתתף בתשלום."
+
+msgid "Enter the guest names. If a gift has already been received, mark who contributed."
+msgstr "הזינו את שמות האורחים. אם כבר התקבלה מתנה, סמנו מי השתתף בתשלום."
+
+msgid "Event actions"
+msgstr "פעולות באירוע"
+
+msgid "Event date"
+msgstr "תאריך האירוע"
+
+msgid "Event details"
+msgstr "פרטי האירוע"
+
+msgid "Event directory"
+msgstr "ספריית האירועים"
+
+msgid "Event icon"
+msgstr "סמל האירוע"
+
+msgid "Event notes"
+msgstr "הערות לאירוע"
+
+msgid "Event summary"
+msgstr "סיכום אירוע"
+
+msgid "Event type"
+msgstr "סוג האירוע"
+
+msgid "Events"
+msgstr "אירועים"
+
+msgid "Every gift,"
+msgstr "כל מתנה"
+
+msgid "Export Excel"
+msgstr "ייצוא ל-Excel"
+
+msgid "Export guest list to Excel"
+msgstr "ייצוא רשימת אורחים ל-Excel"
+
+msgid "Export to Excel"
+msgstr "ייצוא ל-Excel"
+
+msgid "Filter by payment method"
+msgstr "סינון לפי אמצעי תשלום"
+
+msgid "First payment"
+msgstr "תשלום ראשון"
+
+msgid "Flag"
+msgstr "דגל"
+
+msgid "Footer navigation"
+msgstr "ניווט בתחתית הדף"
+
+msgid "Gathering"
+msgstr "מפגש"
+
+msgid "Gift"
+msgstr "מתנה"
+
+msgid "Gift #%(number)s"
+msgstr "מתנה מס׳ %(number)s"
+
+msgid "Gift ledger"
+msgstr "יומן מתנות"
+
+msgid "Gifts"
+msgstr "מתנות"
+
+msgid "Graduation"
+msgstr "סיום לימודים"
+
+msgid "Group icon"
+msgstr "סמל הקבוצה"
+
+msgid "Group name"
+msgstr "שם הקבוצה"
+
+msgid "Group notes"
+msgstr "הערות לקבוצה"
+
+msgid "Guest groups"
+msgstr "קבוצות אורחים"
+
+msgid "Guest list"
+msgstr "רשימת אורחים"
+
+msgid "Guests"
+msgstr "אורחים"
+
+msgid "Heart"
+msgstr "לב"
+
+msgid "Home"
+msgstr "בית"
+
+msgid "How it works"
+msgstr "איך זה עובד"
+
+msgid "I hope it helps you stay organized, save time and make managing your event simpler and more pleasant."
+msgstr "אני מקווה שהוא יוכל לעזור גם לכם לעשות קצת סדר, לחסוך זמן ולהפוך את ניהול האירוע שלכם לנעים ופשוט יותר."
+
+msgid "I study information systems at the University of Haifa and love technology, software development and learning new things. Her request gave me a chance to help a close friend, challenge myself, gain hands-on experience and grow my portfolio."
+msgstr "אני סטודנטית למערכות מידע באוניברסיטת חיפה, עם אהבה גדולה לטכנולוגיה, לפיתוח תוכנה וללמידה של דברים חדשים. ראיתי בבקשה שלה הזדמנות נהדרת לשלב בין הרצון לעזור לחברה טובה לבין הרצון שלי לאתגר את עצמי, לצבור ניסיון מעשי ולהרחיב את תיק העבודות שלי."
+
+msgid "It all started with a close friend who was getting married."
+msgstr "הכול התחיל מחברה טובה שמתחתנת."
+
+msgid "It's really easy!"
+msgstr "זה ממש פשוט!"
+
+msgid "James"
+msgstr "דניאל"
+
+msgid "Keep each event’s guest list grouped in one place."
+msgstr "רכזו את רשימת האורחים של כל אירוע לפי קבוצות."
+
+msgid "Keep guests, gifts and split payments together. See what each event received and export the details to Excel."
+msgstr "נהלו אורחים, מתנות ותשלומים מפוצלים במקום אחד. בדקו כמה התקבל בכל אירוע וייצאו את הנתונים ל-Excel."
+
+msgid "Language"
+msgstr "שפה"
+
+msgid "Last edited"
+msgstr "נערך לאחרונה"
+
+msgid "Last edited event"
+msgstr "האירוע האחרון שנערך"
+
+msgid "Latest event"
+msgstr "האירוע האחרון שנוסף"
+
+msgid "Let me check…"
+msgstr "רגע, אני בודק…"
+
+msgid "Log in"
+msgstr "כניסה"
+
+msgid "Log out"
+msgstr "התנתקות"
+
+msgid "Main navigation"
+msgstr "ניווט ראשי"
+
+msgid "Manage event"
+msgstr "ניהול אירוע"
+
+msgid "Manage guests and track what each celebration received."
+msgstr "נהלו אורחים ועקבו אחר המתנות שהתקבלו בכל אירוע."
+
+msgid "Matching gifts"
+msgstr "מתנות שנמצאו"
+
+msgid "Most recently added event"
+msgstr "האירוע האחרון שנוסף"
+
+msgid "Music"
+msgstr "מוזיקה"
+
+msgid "My account"
+msgstr "החשבון שלי"
+
+msgid "Name"
+msgstr "שם"
+
+msgid "New here?"
+msgstr "פעם ראשונה כאן?"
+
+msgid "No edit recorded yet"
+msgstr "עדיין אין מועד עריכה מתועד"
+
+msgid "No email address saved"
+msgstr "לא נשמרה כתובת אימייל"
+
+msgid "No gifts recorded yet"
+msgstr "עדיין לא נרשמו מתנות"
+
+msgid "No guests yet."
+msgstr "אין עדיין אורחים."
+
+msgid "No matching events"
+msgstr "לא נמצאו אירועים מתאימים"
+
+msgid "No matching gifts"
+msgstr "לא נמצאו מתנות מתאימות"
+
+msgid "No payments recorded. Add each part of a split payment separately."
+msgstr "טרם נרשמו תשלומים. הוסיפו כל חלק של תשלום מפוצל בנפרד."
+
+msgid "Noa and Alon"
+msgstr "נועה ואלון"
+
+msgid "None selected"
+msgstr "לא נבחרו"
+
+msgid "Note"
+msgstr "הערה"
+
+msgid "Note (optional)"
+msgstr "הערה (לא חובה)"
+
+msgid "Now for the easy part."
+msgstr "הסדר מתחיל."
+
+msgid "Number of people"
+msgstr "מס׳ אנשים"
+
+msgid "One more entry…"
+msgstr "עוד שורה אחת…"
+
+msgid "Only enter information you are authorized to use. Keep passwords and card details out of event records."
+msgstr "הזינו רק מידע שיש לכם הרשאה להשתמש בו. הימנעו מהזנת סיסמאות ופרטי כרטיסים ברשומות האירוע."
+
+msgid "Open event"
+msgstr "פתיחת האירוע"
+
+msgid "Organize guests"
+msgstr "ניהול אורחים"
+
+msgid "Other"
+msgstr "אחר"
+
+msgid "Paid for"
+msgstr "שילם עבור"
+
+msgid "Payer"
+msgstr "משלם"
+
+msgid "Payer name"
+msgstr "שם המשלם"
+
+msgid "Payment app"
+msgstr "אפליקציית תשלום"
+
+msgid "Payment breakdown"
+msgstr "פירוט לפי אמצעי תשלום"
+
+msgid "Payment method"
+msgstr "אמצעי תשלום"
+
+msgid "Payment methods will appear here when you record a gift."
+msgstr "אמצעי התשלום יופיעו כאן לאחר רישום מתנה."
+
+msgid "Payment summary"
+msgstr "סיכום תשלומים"
+
+msgid "Payments"
+msgstr "תשלומים"
+
+msgid "People"
+msgstr "אנשים"
+
+msgid "Pick at random"
+msgstr "בחירה אקראית"
+
+msgid "Ready to get your gifts in order?"
+msgstr "בואו נסגור גם את הפינה הזאת."
+
+msgid "Recent gifts"
+msgstr "מתנות אחרונות"
+
+msgid "Recipients"
+msgstr "מקבלי המתנה"
+
+msgid "Record who paid, how they paid, and how much."
+msgstr "תעדו מי שילם, באיזה אמצעי וכמה."
+
+msgid "Related records may also be deleted. This action is permanent."
+msgstr "ייתכן שגם רשומות קשורות יימחקו. המחיקה קבועה."
+
+msgid "Review exported files before sharing them because they may contain guest names and gift amounts."
+msgstr "בדקו את קובצי הייצוא לפני שתשתפו אותם, כי הם עשויים לכלול שמות אורחים וסכומי מתנות."
+
+msgid "Sample data"
+msgstr "נתוני דוגמה"
+
+msgid "Save"
+msgstr "שמירה"
+
+msgid "Save and add another gift"
+msgstr "שמירה והוספת מתנה נוספת"
+
+msgid "Save gift"
+msgstr "שמירת מתנה"
+
+msgid "Save group without payments"
+msgstr "שמירת קבוצה בלי תשלומים"
+
+msgid "Search"
+msgstr "חיפוש"
+
+msgid "Search by event name"
+msgstr "חיפוש לפי שם האירוע"
+
+msgid "Search by event name or type"
+msgstr "חיפוש לפי שם או סוג אירוע"
+
+msgid "Search events"
+msgstr "חיפוש אירועים"
+
+msgid "Search gifts"
+msgstr "חיפוש מתנות"
+
+msgid "Search gifts, guests or payers"
+msgstr "חיפוש מתנות, אורחים או משלמים"
+
+msgid "See an example"
+msgstr "הצצה למערכת"
+
+msgid "See how much came in and who paid."
+msgstr "לא רק כמה. גם ממי."
+
+msgid "Show fewer icons"
+msgstr "צמצום רשימת הסמלים"
+
+msgid "Show more icons"
+msgstr "הצגת סמלים נוספים"
+
+msgid "Skip to content"
+msgstr "דילוג לתוכן"
+
+msgid "Star"
+msgstr "כוכב"
+
+msgid "Star of David"
+msgstr "מגן דוד"
+
+msgid "Start with your first event"
+msgstr "התחילו באירוע הראשון"
+
+msgid "Statistics"
+msgstr "סטטיסטיקה"
+
+msgid "Terms of use"
+msgstr "תנאי שימוש"
+
+msgid "Thank you for using it! 💜"
+msgstr "תודה שבחרתם להשתמש בו! 💜"
+
+msgid "That is how the idea for this site was born."
+msgstr "וככה נולד הרעיון לאתר הזה."
+
+msgid "The GitHub link will be available when the code is published."
+msgstr "הקישור ל-GitHub יתווסף כשהקוד יפורסם."
+
+msgid "The Miller family"
+msgstr "משפחת כהן"
+
+msgid "The party is over."
+msgstr "הערב נגמר."
+
+msgid "The project was built as a portfolio project using Python and Django."
+msgstr "האתר נבנה כפרויקט לתיק עבודות באמצעות Python ו-Django."
+
+msgid "This record contains a payer linked to another gift. Update that payment first."
+msgstr "ברשומה יש משלם שמקושר למתנה אחרת. עדכנו תחילה את התשלום המקושר."
+
+msgid "This site was built with love, and it is completely free."
+msgstr "האתר הזה נבנה באהבה, והוא חינמי לחלוטין."
+
+msgid "Toast"
+msgstr "הרמת כוסית"
+
+msgid "Total events"
+msgstr "סה״כ אירועים"
+
+msgid "Total for matching gifts"
+msgstr "סכום המתנות שנמצאו"
+
+msgid "Total gifts received"
+msgstr "סה״כ התקבל ממתנות"
+
+msgid "Total received"
+msgstr "סה״כ התקבל"
+
+msgid "Track split payments"
+msgstr "מעקב אחר תשלומים מפוצלים"
+
+msgid "Trunemo helps you organize guests, record monetary gifts and split payments, and export an event summary to Excel."
+msgstr "Trunemo עוזר לארגן אורחים, לתעד מתנות כספיות ותשלומים מפוצלים ולייצא סיכום אירוע ל-Excel."
+
+msgid "Try a different name or"
+msgstr "נסו שם אחר או"
+
+msgid "Try another search or"
+msgstr "נסו חיפוש אחר או"
+
+msgid "Use Add gift to record the first payment."
+msgstr "לחצו על הוספת מתנה כדי לרשום את התשלום הראשון."
+
+msgid "Use Trunemo to record gifts. Actual payments take place outside the site."
+msgstr "Trunemo משמש לתיעוד מתנות. התשלומים עצמם מתבצעים מחוץ לאתר."
+
+msgid "Venue"
+msgstr "מקום האירוע"
+
+msgid "View guests & manage"
+msgstr "הצגת אורחים וניהול"
+
+msgid "Want to see how the site was built? Take a look at the code."
+msgstr "רוצים לראות איך האתר נבנה? מוזמנים להציץ בקוד"
+
+msgid "Wedding"
+msgstr "חתונה"
+
+msgid "When my best friend started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
+msgstr "כשהחברה הכי טובה שלי התחילה לתכנן את החתונה שלה, היא חיפשה דרך פשוטה, נוחה ונעימה לעין לנהל את רשימת המוזמנים והמתנות. במקום להסתבך עם טבלאות Excel אינסופיות, היא רצתה מקום אחד שבו אפשר לרכז את הכול בצורה מסודרת וידידותית."
+
+msgid "While building the site, I tried technologies and tools I had never used before, including <strong>Django, PostgreSQL and Figma</strong>. It took independent study, trial and error, problem solving and plenty of patience. Most of all, I enjoyed turning a small idea into a real product."
+msgstr "במהלך הפיתוח התנסיתי בטכנולוגיות ובכלים שלא יצא לי לעבוד איתם קודם, ביניהם <strong>Django, PostgreSQL ו-Figma</strong>. התהליך כלל לא מעט למידה עצמאית, ניסוי וטעייה, פתרון בעיות והמון סבלנות, אבל בעיקר הרבה הנאה מהאפשרות להפוך רעיון קטן למוצר אמיתי."
+
+msgid "Why Trunemo"
+msgstr "למה Trunemo"
+
+msgid "You can save the group now and record gifts and payments later using Add gift in the group menu."
+msgstr "אפשר לשמור את הקבוצה עכשיו ולהוסיף מתנות ותשלומים בהמשך דרך ״הוספת מתנה״ בתפריט הקבוצה."
+
+msgid "Your event gift ledger"
+msgstr "יומן המתנות לאירועים שלך"
+
+msgid "Your events"
+msgstr "האירועים שלך"
+
+msgid "Your gift ledger is ready"
+msgstr "יומן המתנות שלך מוכן"
+
+msgid "Your workspace"
+msgstr "סביבת העבודה שלך"
+
+msgid "accounted for."
+msgstr "נרשמת."
+
+msgid "clear the filter"
+msgstr "נקו את הסינון"
+
+msgid "to record your first gift."
+msgstr "כדי לרשום את המתנה הראשונה."
+

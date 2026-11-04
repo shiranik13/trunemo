@@ -1,0 +1,56 @@
+{% load i18n %}
+{% load static %}
+<!doctype html>
+{% get_current_language as current_language %}
+{% get_current_language_bidi as language_bidi %}
+<html lang="{{ current_language }}" dir="{% if language_bidi %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Trunemo{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'events/app-icon.png' %}?v=2">
+    <link rel="preload" as="image" href="{% static 'events/app-icon.png' %}?v=2">
+    <link rel="stylesheet" href="{% static 'events/style.css' %}?v=31">
+    <script src="{% static 'events/icon-picker.js' %}?v=4" defer></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}workspace{% endblock %}">
+    {% include "icons.html" %}
+    <a class="skip" href="#main">{% translate "Skip to content" %}</a>
+    <header class="site-header">
+        <nav aria-label="{% translate "Main navigation" %}" class="shell">
+            <a class="brand" href="{% url 'home' %}">
+                <img class="brand-mark" src="{% static 'events/app-icon.png' %}?v=2" alt="" width="48" height="48" fetchpriority="high">
+                Trunemo
+            </a>
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'dashboard' %}">{% translate "Your events" %}</a>
+                <a class="nav-link" href="{% url 'profile' %}">{% translate "My account" %}</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="quiet" type="submit">{% translate "Log out" %}</button>
+                </form>
+            {% elif not signup_form %}
+                {% block guest_navigation %}<a class="nav-link" href="{% url 'login' %}">{% translate "Log in" %}</a>{% endblock %}
+            {% endif %}
+            <form class="language-picker" method="post" action="{% url 'set_language' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <label class="sr-only" for="site-language">{% translate "Language" %}</label>
+                <select id="site-language" name="language">
+                    {% get_available_languages as languages %}
+                    {% get_language_info_list for languages as language_options %}
+                    {% for language in language_options %}
+                        <option lang="{{ language.code }}" value="{{ language.code }}"{% if language.code == current_language %} selected{% endif %}>{{ language.name_local|capfirst }}</option>
+                    {% endfor %}
+                </select>
+                <button class="quiet" type="submit">{% translate "Apply" %}</button>
+            </form>
+        </nav>
+    </header>
+    <main id="main" class="shell">
+        {% block content %}{% endblock %}
+    </main>
+    {% include "public_footer.html" %}
+</body>
+</html>

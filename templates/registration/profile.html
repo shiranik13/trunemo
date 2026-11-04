@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "My account" %} | Trunemo{% endblock %}
+{% block content %}
+<section class="panel form-panel">
+    <h1>{% translate "My account" %}</h1>
+    <dl class="breakdown">
+        <div><dt>{% translate "Username" %}</dt><dd><bdi>{{ user.get_username }}</bdi></dd></div>
+        <div><dt>{% translate "Email address" %}</dt><dd>{% if user.email %}<bdi>{{ user.email }}</bdi>{% else %}{% translate "No email address saved" %}{% endif %}</dd></div>
+    </dl>
+</section>
+{% endblock %}

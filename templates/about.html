@@ -1,0 +1,19 @@
+{% extends "public_info.html" %}
+{% load i18n %}
+{% block info_title %}{% translate "A little about the site 🐘💜" %}{% endblock %}
+{% block info_content %}
+<p><strong>{% translate "It all started with a close friend who was getting married." %}</strong></p>
+<p>{% translate "When my best friend started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find." %}</p>
+<p>{% translate "That is how the idea for this site was born." %}</p>
+<p>{% translate "I study information systems at the University of Haifa and love technology, software development and learning new things. Her request gave me a chance to help a close friend, challenge myself, gain hands-on experience and grow my portfolio." %}</p>
+<p>{% blocktranslate %}While building the site, I tried technologies and tools I had never used before, including <strong>Django, PostgreSQL and Figma</strong>. It took independent study, trial and error, problem solving and plenty of patience. Most of all, I enjoyed turning a small idea into a real product.{% endblocktranslate %}</p>
+<p>{% translate "Although the idea started with one wedding, I decided to make the site useful for any kind of event. The goal is to make managing guests, groups and gifts simple, convenient and accessible for everyone." %}</p>
+<p><strong>{% translate "This site was built with love, and it is completely free." %}</strong></p>
+<p>{% translate "I hope it helps you stay organized, save time and make managing your event simpler and more pleasant." %}</p>
+<p>{% translate "Thank you for using it! 💜" %}</p>
+{% if github_profile_url %}
+<p><a href="{{ github_profile_url }}">{% translate "Want to see how the site was built? Take a look at the code." %}</a></p>
+{% else %}
+<p><strong>{% translate "Want to see how the site was built? Take a look at the code." %}</strong><br><small>{% translate "The GitHub link will be available when the code is published." %}</small></p>
+{% endif %}
+{% endblock %}

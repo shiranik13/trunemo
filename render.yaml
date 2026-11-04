@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: trunemo
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements-render.txt && python manage.py collectstatic --noinput
+    startCommand: python manage.py migrate --noinput && gunicorn trunemo.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: trunemo.production
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false

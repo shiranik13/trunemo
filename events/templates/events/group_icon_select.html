@@ -1,0 +1,13 @@
+{% load i18n %}
+<div class="icon-picker" data-icon-picker{% if widget.attrs.id %} id="{{ widget.attrs.id }}"{% endif %}>
+    {% for group, options, index in widget.optgroups %}
+        {% for option in options %}
+            <div data-icon-option{% if not option.value %} class="icon-picker-random"{% endif %}>{% include option.template_name with widget=option %}</div>
+        {% endfor %}
+    {% endfor %}
+    <button class="secondary icon-picker-toggle" type="button" data-icon-toggle hidden aria-expanded="false"
+            data-more="{% translate 'Show more icons' %}" data-less="{% translate 'Show fewer icons' %}">
+        <span class="event-icons-more">+ {% translate "Show more icons" %}</span>
+        <span class="event-icons-less">− {% translate "Show fewer icons" %}</span>
+    </button>
+</div>

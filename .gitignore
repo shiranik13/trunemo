@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+db.sqlite3
+work/
+outputs/
+staticfiles/
+.env
+.env.*
+.neon
+node_modules/
+.agents/
+.codex/
+skills-lock.json

@@ -1,0 +1,66 @@
+.public-landing #main { width: 100%; max-width: none; padding: 0; }
+.public-landing .site-header, .public-hero, .public-closing { background: #38213e; color: #fff8eb; }
+.public-landing .site-header { border-color: #ffffff29; }
+.public-landing .site-header a, .public-copy .actions > a:not(.button) { color: inherit; }
+.public-nav { display: flex; gap: clamp(.8rem, 3vw, 2rem); flex-wrap: wrap; }
+.public-nav a { font-size: .88rem; font-weight: 700; }
+.public-hero { overflow: hidden; background-image: radial-gradient(ellipse at 20% 0%, #6a477654, transparent 62%); }
+.public-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(1.5rem, 5vw, 4.5rem); }
+.public-hero > .shell { min-height: clamp(30rem, 55vw, 43rem); padding-block: clamp(3rem, 7vw, 6rem); }
+.public-kicker { font-weight: 800; font-size: .85rem; }
+.public-copy h1, .public-landing h2 { font-family: var(--display); line-height: 1.04; }
+.public-copy h1 { font-size: clamp(2.65rem, 6vw, 6rem); margin-block: 1rem 1.4rem; font-weight: 900; overflow-wrap: normal; }
+.public-copy h1:lang(ru) { font-size: clamp(2rem, 5.5vw, 5.5rem); }
+.public-copy em { color: #ffcb4c; font-style: normal; }
+.public-copy > p { color: #ecdaeb; max-width: 36ch; line-height: 1.7; }
+.public-copy .actions { margin-block-start: 1.5rem; }
+.public-landing .public-yellow { color: #38213e; background: #ffcb4c; border-color: #ffcb4c; box-shadow: 3px 4px 0 #b75040; }
+.public-landing .public-yellow:hover { background: #ffe091; }
+.public-art { position: relative; display: grid; place-items: center; isolation: isolate; min-width: 0; padding-block: 2rem; }
+.public-art::before { position: absolute; inset: -5% 4%; border-radius: 52% 48% 46% 54%; background: linear-gradient(155deg, #ffdc6b, #ffad24); content: ""; z-index: -2; }
+.public-orbit { position: absolute; inset: 4% -2%; border: 1px solid #7b397b; border-radius: 50%; transform: rotate(-21deg); z-index: -1; }
+.public-art img { width: 100%; height: auto; filter: drop-shadow(0 .7rem .5rem #55274055); }
+.public-artwork { position: relative; width: 100%; }
+.public-artwork > img { display: block; }
+.public-artwork > img:first-child { transform: scaleX(-1); }
+/* Mirror the illustration, then restore only the lettering area from the source. */
+.public-artwork > .public-bubble-text {
+    position: absolute;
+    inset: 0;
+    filter: none;
+    clip-path: inset(20% 5.5% 57% 62.5% round 5%);
+    transform: translateX(-57%);
+}
+.public-artwork--ru > .public-bubble-text {
+    clip-path: inset(20% 6% 57% 62% round 5%);
+    transform: translateX(-56%);
+}
+.public-star { position: absolute; inset-inline-end: 0; inset-block-start: -4%; color: #ffcf59; font-size: 2.4rem; }
+.public-steps { padding-block: clamp(2.5rem, 7vw, 6rem); text-align: center; }
+.public-landing h2 { font-size: clamp(2rem, 4vw, 3.75rem); margin-block: .6rem 1.4rem; }
+.public-steps .public-kicker, .public-demo .public-kicker { color: #8a3f44; }
+.public-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; text-align: start; }
+.public-cards article { padding: clamp(1.2rem, 3vw, 2rem); border: 1px solid #634965; border-radius: 1rem; background: #ead6f8; }
+.public-cards article:nth-child(2) { background: #f8d4c9; }
+.public-cards article:nth-child(3) { background: #dce8ce; }
+.public-cards article span { font-weight: 900; font-size: 1.6rem; }
+.public-cards h3 { margin-block: .6rem .4rem; }
+.public-demo { padding: clamp(1.4rem, 5vw, 4rem); background: #efe7ce; border-radius: 1.5rem; }
+.public-demo ul { padding-inline-start: 1.2rem; line-height: 1.9; }
+.public-preview { min-width: 0; padding: clamp(.9rem, 3vw, 1.8rem); background: #fffaf0; border: 1px solid #745476; box-shadow: 4px 5px 0 #745476; border-radius: 1rem; }
+.public-preview table { width: 100%; text-align: start; border-collapse: collapse; font-size: .9rem; }
+.public-preview th, .public-preview td { padding: .55rem .25rem; text-align: start; border-block-end: 1px solid #e3d7da; }
+.public-preview h3 { margin-block: .4rem 1rem; }
+.public-closing { padding: clamp(2rem, 6vw, 4.5rem) 1.5rem; margin-block: clamp(2.5rem, 7vw, 6rem) 0; border-radius: 1.5rem; text-align: center; }
+.public-info { max-width: 48rem; margin-inline: auto; }
+.public-info > * + * { margin-block-start: 1rem; }
+.public-info li + li { margin-block-start: .6rem; }
+@media (prefers-reduced-motion: no-preference) {
+    html:has(.public-landing) { scroll-behavior: smooth; }
+}
+@media (max-width: 46rem) {
+    .public-grid, .public-cards { grid-template-columns: minmax(0, 1fr); }
+    .public-hero > .shell { gap: 2.5rem; }
+    .public-art { width: min(100%, 26rem); justify-self: center; }
+    .public-nav { display: none; }
+}

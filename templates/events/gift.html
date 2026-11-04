@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ gift }} | Trunemo{% endblock %}
+{% block content %}
+<nav class="breadcrumb" aria-label="{% translate "Breadcrumb" %}"><a href="{% url 'event_detail' event.pk %}">{{ event.name }}</a><span aria-hidden="true">/</span><span aria-current="page">{{ gift }}</span></nav>
+<div class="heading page-heading">
+    <div class="mascot-heading">
+        <p class="badge">{{ gift.group }}</p>
+        <h1>{{ gift }}</h1>
+        {% include "events/mascot.html" with pose="approved" only %}
+    </div>
+    <div class="actions">
+        <a class="button secondary" href="{% url 'gift_edit' event.pk gift.group_id gift.pk %}">{% translate "Edit gift" %}</a>
+        <a class="danger-link" href="{% url 'gift_delete' event.pk gift.group_id gift.pk %}">{% translate "Delete gift" %}</a>
+    </div>
+</div>
+<section class="panel">
+    {% if gift.description %}<p><strong>{% translate "Note" %}</strong> {{ gift.description }}</p>{% endif %}
+    <p><strong>{% translate "Total received" %}</strong> {% include "events/currency_amounts.html" with amounts=gift.currency_totals only %}</p>
+</section>
+<section class="panel">
+    <div class="heading section-heading">
+        <h2>{% translate "Payments" %}</h2>
+        <a class="button" href="{% url 'payment_add' event.pk gift.pk %}"><svg class="icon" aria-hidden="true"><use href="#plus"/></svg> {% translate "Add payment" %}</a>
+    </div>
+    <ul class="records">
+        {% for payment in payments %}
+            <li>
+                <div><strong><bdi>{{ payment.get_currency_display }}{{ payment.amount|floatformat:"2g" }}</bdi></strong><span class="muted">{{ payment.payer }} · {{ payment.get_method_display }}</span></div>
+                <div class="actions">
+                    <a href="{% url 'payment_edit' event.pk gift.pk payment.pk %}">{% translate "Edit" %}</a>
+                    <a class="danger-link" href="{% url 'payment_delete' event.pk gift.pk payment.pk %}">{% translate "Delete" %}</a>
+                </div>
+            </li>
+        {% empty %}
+            <li>{% translate "No payments recorded. Add each part of a split payment separately." %}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{{ title }} | Trunemo{% endblock %}
+{% block extra_head %}
+{% if form.event_date %}
+    <link rel="preload" as="image" href="{% static 'events/event-icons.png' %}">
+    <link rel="stylesheet" href="{% static 'events/vendor/flatpickr/flatpickr.min.css' %}">
+    <script src="{% static 'events/vendor/flatpickr/flatpickr.min.js' %}" defer></script>
+    {% if current_language == "he" %}<script src="{% static 'events/vendor/flatpickr/he.js' %}" defer></script>{% endif %}
+    {% if current_language == "ru" %}<script src="{% static 'events/vendor/flatpickr/ru.js' %}" defer></script>{% endif %}
+    <script src="{% static 'events/event-calendar.js' %}?v=2" defer></script>
+{% endif %}
+{% endblock %}
+{% block content %}
+<section class="panel form-panel{% if form.event_date %} event-form-panel{% endif %}">
+    <header class="mascot-heading">
+        <h1>{{ title }}</h1>
+        {% if gift_group %}
+            <span class="group-avatar gift-form-avatar avatar--{{ gift_group.icon|default:'family' }}" aria-hidden="true"></span>
+            <p class="event-meta">{{ gift_group.name }}</p>
+        {% elif signup_form %}
+            {% include "events/mascot.html" with pose="wave" only %}
+        {% else %}
+            {% include "events/mascot.html" with pose="think" only %}
+        {% endif %}
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        {% if payment_form %}
+            {{ payment_form.non_field_errors }}
+            {{ payment_form.payer.as_field_group }}
+            <div class="group-payment-fields">
+                <div>{{ payment_form.amount.as_field_group }}</div><div>{{ payment_form.currency.as_field_group }}</div>
+                <div>{{ payment_form.method.as_field_group }}</div>
+            </div>
+            {{ payment_form.covered_guests.as_field_group }}
+        {% endif %}
+        {% if form.event_date %}
+            <div class="event-form-fields">
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                    <div class="event-field event-field--{{ field.name }}">{{ field.as_field_group }}</div>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.as_div }}
+        {% endif %}
+        <div class="actions">
+            <button type="submit">{% if signup_form %}{% translate "Create account" %}{% elif payment_form %}{% translate "Save gift" %}{% else %}{% translate "Save" %}{% endif %}</button>
+            {% if signup_form %}<a href="{% url 'login' %}">{% translate "Log in" %}</a>{% endif %}
+            {% if payment_form %}<button class="secondary" type="submit" name="add_another" value="1">{% translate "Save and add another gift" %}</button>{% endif %}
+            {% if back_url %}<a href="{{ back_url }}">{% translate "Cancel" %}</a>{% endif %}
+        </div>
+    </form>
+    {% if editing_gift %}
+        <section aria-labelledby="gift-payments-heading">
+            <div class="heading section-heading">
+                <h2 id="gift-payments-heading">{% translate "Payments" %}</h2>
+                <a href="{% url 'payment_add' gift_group.event_id editing_gift.pk %}">{% translate "Add payment" %}</a>
+            </div>
+            <ul class="records">
+                {% for payment in editing_gift.payments.all %}
+                    <li>
+                        <div><strong><bdi>{{ payment.get_currency_display }}{{ payment.amount|floatformat:"2g" }}</bdi></strong><span class="muted">{{ payment.payer }} · {{ payment.get_method_display }}</span></div>
+                        <a class="button secondary" href="{% url 'payment_edit' gift_group.event_id editing_gift.pk payment.pk %}">{% translate "Edit payment" %}</a>
+                    </li>
+                {% empty %}
+                    <li>{% translate "No payments recorded. Add each part of a split payment separately." %}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+</section>
+{% endblock %}

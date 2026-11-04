@@ -1,0 +1,8 @@
+{% load i18n %}
+<label class="sr-only" for="filter-currency">{% translate "Currency" %}</label>
+<select id="filter-currency" name="currency">
+    <option value="">{% translate "All currencies" %}</option>
+    {% for code, label in currencies %}
+        <option dir="ltr" value="{{ code }}"{% if code == currency %} selected{% endif %}>{{ label }}</option>
+    {% endfor %}
+</select>

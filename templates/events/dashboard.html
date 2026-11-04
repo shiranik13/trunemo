@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load i18n static tz %}
+{% block title %}{% translate "Dashboard" %} | Trunemo{% endblock %}
+{% block extra_head %}<link rel="preload" as="image" href="{% static 'events/event-icons.png' %}">{% endblock %}
+{% block content %}
+<section class="event-poster" aria-labelledby="dashboard-title">
+    <div class="poster-copy">
+        <h1 id="dashboard-title">{% translate "Your events" %}</h1>
+        <p class="poster-intro">{% translate "Manage guests and track what each celebration received." %}</p>
+        <div class="poster-actions">
+            <a class="button" href="{% url 'event_add' %}"><svg class="icon" aria-hidden="true"><use href="#plus"/></svg> {% translate "Add event" %}</a>
+        </div>
+    </div>
+    <div class="poster-art" aria-hidden="true">
+        <img src="{% static 'events/mascot/celebrate-transparent.png' %}?v=2" alt="" width="1122" height="1402" fetchpriority="high">
+    </div>
+</section>
+<div class="dashboard-summary">
+    <p><strong>{{ event_count }}</strong> {% translate "Events" %}</p>
+    <p><strong>{{ guest_count }}</strong> {% translate "Guests" %}</p>
+    <p><strong>{{ gift_count }}</strong> {% translate "Gifts" %}</p>
+</div>
+{% if event_count %}
+<div class="dashboard-cards">
+    <section class="panel dashboard-featured" aria-labelledby="featured-title">
+        {% if featured_event %}
+        <p class="eyebrow">{% translate "Last edited event" %}</p>
+        <h2 id="featured-title">{{ featured_event.name }}</h2>
+        {% timezone "Asia/Jerusalem" %}
+            <p>{% translate "Last edited" %} · <time datetime="{{ featured_event.last_edited_at|date:'c' }}">{{ featured_event.last_edited_at|date:"DATE_FORMAT" }} · {{ featured_event.last_edited_at|time:"H:i" }}</time></p>
+        {% endtimezone %}
+        {% if featured_event.event_date %}<p>{{ featured_event.event_date|date:"DATE_FORMAT" }}</p>{% endif %}
+        {% if featured_event.venue %}<p>{{ featured_event.venue }}</p>{% endif %}
+        <p>{{ featured_event.group_count }} · {% translate "Guest groups" %}</p>
+        <div class="actions">
+            <a class="button" href="{% url 'event_detail' featured_event.pk %}">{% translate "Open event" %}</a>
+            <a href="{% url 'event_actions' featured_event.pk %}">{% translate "Actions" %}</a>
+        </div>
+        {% else %}
+        <h2 id="featured-title">{% translate "Last edited event" %}</h2>
+        <p>{% translate "No edit recorded yet" %}</p>
+        {% endif %}
+    </section>
+    <section class="panel dashboard-recent" aria-labelledby="recent-title">
+        <h2 id="recent-title">{% translate "Recent gifts" %}</h2>
+        <ul class="records">
+            {% for gift in recent_gifts %}
+                <li><div><a class="record-title" href="{% url 'gift_detail' gift.group.event_id gift.pk %}">{{ gift.group.name }}</a><span class="muted">{{ gift.group.event.name }}</span></div><strong class="money">{% include "events/currency_amounts.html" with amounts=gift.currency_totals only %}</strong></li>
+            {% empty %}
+                <li class="muted">{% translate "No gifts recorded yet" %}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endif %}
+<section class="panel ledger event-directory" aria-labelledby="event-list">
+    <div class="heading section-heading"><h2 id="event-list">{% translate "All events" %}</h2></div>
+    <form method="get" class="search">
+        <label class="sr-only" for="search">{% translate "Search events" %}</label>
+        <div class="search-field"><svg class="icon" aria-hidden="true"><use href="#search-icon"/></svg><input id="search" name="q" type="search" value="{{ search }}" placeholder="{% translate "Search by event name" %}"></div>
+        <button class="secondary" type="submit">{% translate "Search" %}</button>
+        {% if search %}<a href="{% url 'dashboard' %}">{% translate "Clear" %}</a>{% endif %}
+    </form>
+    <ul class="records">
+        {% for event in events %}
+            <li>
+                <a class="event-ticket" href="{% url 'event_detail' event.pk %}">
+                    <span class="event-emblem event-emblem--{{ event.icon|default:'calendar' }}" aria-hidden="true"></span>
+                    <span class="record-text"><strong class="record-title">{{ event.name }}</strong></span>
+                    <span class="ticket-arrow"><svg class="icon direction-arrow" aria-hidden="true"><use href="#arrow"/></svg></span>
+                </a>
+            </li>
+        {% empty %}
+            <li class="empty">
+                <span class="tile-icon lavender" aria-hidden="true"><svg class="icon"><use href="#calendar"/></svg></span>
+                {% if search %}
+                    <h3>{% translate "No matching events" %}</h3><p>{% translate "Try a different name or" %} <a href="{% url 'dashboard' %}">{% translate "clear the filter" %}</a>.</p>
+                {% else %}
+                    <h3>{% translate "Start with your first event" %}</h3><p>{% translate "Create an event to organize guests and record gifts." %}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

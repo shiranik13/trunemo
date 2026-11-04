@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ event.name }} | Trunemo{% endblock %}
+{% block content %}
+<nav class="breadcrumb" aria-label="{% translate "Breadcrumb" %}"><a href="{% url 'dashboard' %}">{% translate "Your events" %}</a><span aria-hidden="true">/</span><span aria-current="page">{% translate "Event details" %}</span></nav>
+<div class="heading page-heading">
+    <div>
+        <h1>{{ event.name }}</h1>
+        {% if event.event_date or event.venue %}
+            <div class="event-meta">
+                {% if event.event_date %}<span><svg class="icon" aria-hidden="true"><use href="#calendar"/></svg> <time datetime="{{ event.event_date|date:'Y-m-d' }}">{{ event.event_date|date:"DATE_FORMAT" }}</time></span>{% endif %}
+                {% if event.venue %}<span>{% translate "Venue" %} · {{ event.venue }}</span>{% endif %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="actions">
+        <a class="button secondary" href="{% url 'event_actions' event.pk %}">{% translate "Actions" %}</a>
+        <details class="disclosure">
+            <summary class="button secondary">{% translate "Manage event" %} <svg class="icon" aria-hidden="true"><use href="#chevron"/></svg></summary>
+            <div class="disclosure-panel">
+                <a href="{% url 'event_edit' event.pk %}">{% translate "Edit event" %}</a>
+                <a class="danger-link" href="{% url 'event_delete' event.pk %}">{% translate "Delete event" %}</a>
+            </div>
+        </details>
+    </div>
+</div>
+{% if event.notes %}
+    <section class="panel event-notes" aria-label="{% translate 'Event notes' %}">
+        <h2>{% translate "Event notes" %}</h2>
+        {{ event.notes|linebreaksbr }}
+    </section>
+{% endif %}
+    <section class="panel guest-panel" aria-labelledby="groups-title">
+        <div class="heading section-heading">
+            <div><h2 id="groups-title">{% translate "Guest groups" %}</h2></div>
+            <a class="button secondary" href="{% url 'group_add' event.pk %}"><svg class="icon" aria-hidden="true"><use href="#plus"/></svg> {% translate "Add group" %}</a>
+        </div>
+        {% for group in groups %}
+            <article class="group">
+                <div class="group-top">
+                    <span class="group-avatar avatar--{{ group.icon|default:'family' }}" aria-hidden="true"></span>
+                    <div><h3>{{ group.name }}</h3><p class="muted">{% translate "Guests" %} · {{ group.guests.all|length }}</p></div>
+                </div>
+                <details class="group-details">
+                    <summary>{% translate "View guests & manage" %} <svg class="icon" aria-hidden="true"><use href="#chevron"/></svg></summary>
+                    <ul class="records">
+                        {% for guest in group.guests.all %}
+                            <li><span>{{ guest.name }}</span><span class="actions">
+                                <a href="{% url 'guest_edit' event.pk group.pk guest.pk %}" aria-label="{% translate 'Edit' %} {{ guest.name }}">{% translate "Edit" %}</a>
+                                <a class="danger-link" href="{% url 'guest_delete' event.pk group.pk guest.pk %}" aria-label="{% translate 'Delete' %} {{ guest.name }}">{% translate "Delete" %}</a>
+                            </span></li>
+                        {% empty %}
+                            <li class="muted">{% translate "No guests yet." %}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="actions group-links">
+                        <a href="{% url 'gift_add' event.pk group.pk %}">{% translate "Add gift" %}</a>
+                        <a href="{% url 'group_edit' event.pk group.pk %}">{% translate "Edit group" %}</a>
+                        <a class="danger-link" href="{% url 'group_delete' event.pk group.pk %}">{% translate "Delete group" %}</a>
+                    </div>
+                </details>
+                <a class="group-add" href="{% url 'guest_add' event.pk group.pk %}"><svg class="icon" aria-hidden="true"><use href="#plus"/></svg> {% translate "Add guest" %}</a>
+            </article>
+        {% empty %}
+            <p class="group-empty muted">{% translate "Add a group such as Family or Friends, then add the guests who belong to it." %}</p>
+        {% endfor %}
+    </section>
+    <div class="actions">
+        {% if groups %}
+            <a class="button secondary" href="{% url 'guest_export' event.pk %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export guest list to Excel" %}</a>
+        {% else %}
+            <p class="muted">{% translate "Add a guest group before exporting the guest list." %}</p>
+        {% endif %}
+    </div>
+{% endblock %}
+

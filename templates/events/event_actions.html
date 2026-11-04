@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ event.name }} | Trunemo{% endblock %}
+{% block content %}
+<nav class="breadcrumb" aria-label="{% translate "Breadcrumb" %}"><a href="{% url 'dashboard' %}">{% translate "Your events" %}</a><span aria-hidden="true">/</span><span aria-current="page">{% translate "Event details" %}</span></nav>
+<div class="heading page-heading">
+    <div>
+        <h1>{{ event.name }}</h1>
+    </div>
+    <div class="actions"><a class="button secondary" href="{% url 'event_detail' event.pk %}">{% translate "Guest groups" %}</a>
+        <a class="button secondary" href="{% url 'event_statistics' event.pk %}{% if currency %}?currency={{ currency }}{% endif %}"><svg class="icon" aria-hidden="true"><use href="#wallet"/></svg> {% translate "Statistics" %}</a>
+        <a class="button secondary" href="{% url 'event_export' event.pk %}{% if is_filtered %}?{{ request.GET.urlencode }}{% endif %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export Excel" %}</a>
+        <details class="disclosure">
+            <summary class="button secondary">{% translate "Manage event" %} <svg class="icon" aria-hidden="true"><use href="#chevron"/></svg></summary>
+            <div class="disclosure-panel">
+                <a href="{% url 'event_edit' event.pk %}">{% translate "Edit event" %}</a>
+                <a class="danger-link" href="{% url 'event_delete' event.pk %}">{% translate "Delete event" %}</a>
+            </div>
+        </details>
+    </div>
+</div>
+    <section class="panel ledger" aria-labelledby="gifts-title">
+        <div class="heading section-heading">
+            <div><h2 id="gifts-title">{% translate "Gifts" %}</h2></div>
+        </div>
+        <form method="get" class="search">
+            <label class="sr-only" for="search">{% translate "Search gifts" %}</label>
+            <div class="search-field"><svg class="icon" aria-hidden="true"><use href="#search-icon"/></svg><input id="search" name="q" type="search" value="{{ search }}" placeholder="{% translate "Search gifts, guests or payers" %}"></div>
+            <label class="sr-only" for="filter-group">{% translate "Guest groups" %}</label>
+            <select id="filter-group" name="group">
+                <option value="">{% translate "All groups" %}</option>
+                {% for group in groups %}<option value="{{ group.pk }}"{% if group.pk == group_id %} selected{% endif %}>{{ group.name }}</option>{% endfor %}
+            </select>
+            <label class="sr-only" for="filter-method">{% translate "Payment method" %}</label>
+            <select id="filter-method" name="method">
+                <option value="">{% translate "All payment methods" %}</option>
+                {% for value, label in methods %}<option value="{{ value }}"{% if value == method %} selected{% endif %}>{{ label }}</option>{% endfor %}
+            </select>
+            {% include "events/currency_filter.html" %}
+            <button class="secondary" type="submit">{% translate "Search" %}</button>
+            {% if is_filtered %}<a href="{% url 'event_actions' event.pk %}">{% translate "Clear" %}</a>{% endif %}
+        </form>
+        {% if is_filtered %}
+            <p class="gift-results">
+                {% translate "Matching gifts" %}: <strong>{{ gifts|length }}</strong>
+                · {% translate "Total for matching gifts" %}: <strong>{% include "events/currency_amounts.html" with amounts=results_totals only %}</strong>
+            </p>
+        {% endif %}
+        <ul class="records">
+            {% for gift in gifts %}
+                <li>
+                    <div class="record-main">
+                        <span class="group-avatar avatar--{{ gift.group.icon|default:'family' }}" aria-hidden="true"></span>
+                        <div class="record-text">
+                            <a class="record-title money" href="{% url 'gift_detail' event.pk gift.pk %}">{% include "events/currency_amounts.html" with amounts=gift.currency_totals only %}</a>
+                            {% if gift.description %}<span class="muted">{{ gift.description }}</span>{% endif %}
+                            <span class="muted">{{ gift.group }}</span>
+                            {% for payment in gift.payments.all %}
+                                <span class="muted">{{ payment.payer }} · {{ payment.get_method_display }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <a class="button secondary" href="{% url 'gift_edit' event.pk gift.group_id gift.pk %}">{% translate "Edit gift" %}</a>
+                </li>
+            {% empty %}
+                <li class="empty">
+                    {% if is_filtered %}
+                        <span class="tile-icon" aria-hidden="true"><svg class="icon"><use href="#gift"/></svg></span>
+                        <h3>{% translate "No matching gifts" %}</h3><p>{% translate "Try another search or" %} <a href="{% url 'event_actions' event.pk %}">{% translate "clear the filter" %}</a>.</p>
+                    {% elif groups %}
+                        {% include "events/mascot.html" with pose="work" only %}
+                        <h3>{% translate "No gifts recorded yet" %}</h3>
+                        <a href="{% url 'event_detail' event.pk %}">{% translate "Guest groups" %}</a>
+                    {% else %}
+                        {% include "events/mascot.html" with pose="work" only %}
+                        <h3>{% translate "Your gift ledger is ready" %}</h3><p><a href="{% url 'group_add' event.pk %}">{% translate "Create a guest group" %}</a> {% translate "to record your first gift." %}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

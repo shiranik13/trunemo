@@ -1,0 +1,11 @@
+{% extends "public_info.html" %}
+{% load i18n %}
+{% block info_title %}{% translate "Terms of use" %}{% endblock %}
+{% block info_content %}
+<p>{% translate "Draft terms for the Trunemo prototype." %}</p>
+<ul>
+    <li>{% translate "Use Trunemo to record gifts. Actual payments take place outside the site." %}</li>
+    <li>{% translate "Only enter information you are authorized to use. Keep passwords and card details out of event records." %}</li>
+    <li>{% translate "Review exported files before sharing them because they may contain guest names and gift amounts." %}</li>
+</ul>
+{% endblock %}

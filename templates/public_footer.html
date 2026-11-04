@@ -1,0 +1,10 @@
+{% load i18n %}
+<footer class="public-footer">
+    <div class="shell public-footer-inner">
+        <nav aria-label="{% translate 'Footer navigation' %}">
+            <a href="{% url 'about' %}">{% translate "About the site" %}</a>
+            <a href="{% url 'terms' %}">{% translate "Terms of use" %}</a>
+        </nav>
+        <small>© {% now "Y" %} Trunemo · {% translate "All rights reserved" %}</small>
+    </div>
+</footer>

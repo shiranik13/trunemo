@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Log in" %} | Trunemo{% endblock %}
+{% block content %}
+<section class="panel form-panel">
+    <h1>{% translate "Log in" %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit">{% translate "Log in" %}</button>
+    </form>
+    <p>{% translate "New here?" %} <a href="{% url 'signup' %}">{% translate "Create an account" %}</a>.</p>
+</section>
+{% endblock %}

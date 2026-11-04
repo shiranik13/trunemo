@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'events/landing.css' %}?v=2">{% endblock %}
+{% block content %}
+<article class="panel public-info">
+    <h1>{% block info_title %}{% endblock %}</h1>
+    {% block info_content %}{% endblock %}
+    <p><a href="{% url 'home' %}">{% translate "Back to home" %}</a></p>
+</article>
+{% endblock %}

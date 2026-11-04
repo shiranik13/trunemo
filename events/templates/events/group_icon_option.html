@@ -1,0 +1,16 @@
+{% load i18n %}
+<label class="{% if widget.value %}icon-choice{% else %}icon-random-choice{% endif %}"{% if widget.attrs.id %} for="{{ widget.attrs.id }}"{% endif %}>
+    {% include "django/forms/widgets/input.html" %}
+    {% if widget.value %}
+        <span class="icon-choice-tile">
+            {% if "data-event-icons" in widget.attrs %}
+                <span class="event-emblem event-emblem--{{ widget.value }}" aria-hidden="true"></span>
+            {% else %}
+                <span class="group-avatar avatar--{{ widget.value }}" aria-hidden="true"></span>
+            {% endif %}
+            <span class="sr-only">{{ widget.label }}</span>
+        </span>
+    {% else %}
+        <span class="icon-random-pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c1.7 0 3.2-1.6 4.4-3.6M13.7 9.6C15 7.5 16.4 6 18 6h3m-4-4 4 4-4 4"/></svg>{% translate "Pick at random" %}</span>
+    {% endif %}
+</label>

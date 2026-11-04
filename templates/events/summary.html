@@ -1,0 +1,22 @@
+{% load i18n %}
+<section class="summary" aria-label="{% translate "Payment summary" %}">
+    {% translate "Total received" as fallback_label %}
+    <div class="total-card">
+        <div class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#wallet"/></svg> {{ total_label|default:fallback_label }}</div>
+        <p class="amount">{% include "events/currency_amounts.html" with amounts=total only %}</p>
+        <p class="total-caption">{% translate "Across all recorded payments" %}</p>
+        {% include "events/mascot.html" with pose="report" only %}
+    </div>
+    <div class="panel breakdown-card">
+        <h2>{% translate "Payment breakdown" %}</h2>
+        {% if breakdown %}
+            <dl class="breakdown">
+                {% for method, symbol, amount in breakdown %}
+                    <div><dt><span class="method-dot" aria-hidden="true"></span>{{ method }}</dt><dd><bdi>{{ symbol }}{{ amount|floatformat:"2g" }}</bdi></dd></div>
+                {% endfor %}
+            </dl>
+        {% else %}
+            <p class="muted">{% translate "Payment methods will appear here when you record a gift." %}</p>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,1 @@
+{% for symbol, amount in amounts %}<bdi>{{ symbol }}{{ amount|floatformat:"2g" }}</bdi>{% if not forloop.last %} · {% endif %}{% empty %}0{% endfor %}

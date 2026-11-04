@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n static %}
+{% block title %}{% translate "Add group" %} | Trunemo{% endblock %}
+{% block content %}
+<section class="panel form-panel">
+    <h1>{% translate "Add group" %}</h1>
+    <form method="post" id="group-setup"{% if submitted %} data-submitted{% endif %}>
+        {% csrf_token %}
+        {{ entries.management_form }}
+        {{ entries.non_form_errors }}
+        <div data-group-details>
+            {{ form.non_field_errors }}
+            {{ form.name.as_field_group }}
+            {{ form.icon.as_field_group }}
+            <h2>{% translate "Guests" %}</h2>
+            <p>{% translate "Enter the guest names. If a gift has already been received, mark who contributed." %}</p>
+            <p class="muted">{% translate "You can save the group now and record gifts and payments later using Add gift in the group menu." %}</p>
+        </div>
+        <h2 data-payment-heading hidden>{% translate "Payments" %}</h2>
+        <div data-guest-rows>
+            {% for entry in entries %}
+                {% include "events/group_guest_entry.html" %}
+            {% endfor %}
+        </div>
+        <div data-group-notes>{{ form.notes.as_field_group }}</div>
+        <template data-guest-template>
+            {% include "events/group_guest_entry.html" with entry=entries.empty_form %}
+        </template>
+        <div class="actions">
+            <button class="secondary" type="button" data-add-row hidden>{% translate "Add guest" %}</button>
+            <button type="button" data-payment-next hidden>{% translate "Continue to payments" %}</button>
+            <button class="secondary" type="button" data-payment-back hidden>{% translate "Back to guests" %}</button>
+            <button type="submit" data-group-save>{% translate "Save" %}</button>
+            <button type="submit" name="save_without_payments" value="1" data-save-without-payments>{% translate "Save group without payments" %}</button>
+            <a href="{{ back_url }}">{% translate "Cancel" %}</a>
+        </div>
+    </form>
+</section>
+<script src="{% static 'events/group-setup.js' %}?v=7" defer></script>
+{% endblock %}
+

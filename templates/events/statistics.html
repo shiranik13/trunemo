@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Statistics" %} · {{ event.name }} | Trunemo{% endblock %}
+{% block content %}
+<nav class="breadcrumb" aria-label="{% translate "Breadcrumb" %}">
+    <a href="{% url 'event_detail' event.pk %}">{{ event.name }}</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{% translate "Statistics" %}</span>
+</nav>
+<div class="heading page-heading">
+    <h1>{% translate "Statistics" %}</h1>
+    <a class="button secondary" href="{% url 'event_export' event.pk %}{% if currency %}?currency={{ currency }}{% endif %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export Excel" %}</a>
+</div>
+<form method="get" class="search">
+    {% include "events/currency_filter.html" %}
+    <button class="secondary" type="submit">{% translate "Apply" %}</button>
+</form>
+{% translate "Total gifts received" as event_total_label %}
+{% include "events/summary.html" with total_label=event_total_label %}
+{% endblock %}
