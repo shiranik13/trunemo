@@ -1,4 +1,4 @@
 {% load static %}
 <div class="mascot mascot--{{ pose }}" aria-hidden="true">
-    <img src="{% static 'events/mascot/' %}{{ pose }}.png" alt="" width="1254" height="1254">
+    <img src="{% static 'events/mascot/'|add:pose|add:'.webp' %}" alt="" width="1254" height="1254">
 </div>

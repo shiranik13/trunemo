@@ -23,18 +23,18 @@
             <span class="public-orbit" aria-hidden="true"></span>
             <span class="public-star" aria-hidden="true">✦</span>
             {% if current_language == "he" %}
-                <img src="{% static 'events/mascot/home-he.png' %}?v=3" alt="זה ממש פשוט" width="1470" height="1070" fetchpriority="high">
+                <img src="{% static 'events/mascot/home-he.webp' %}" alt="זה ממש פשוט" width="1470" height="1070" fetchpriority="high">
             {% elif current_language == "ru" %}
-                {% static 'events/mascot/home-ru.png' as mascot_image %}
+                {% static 'events/mascot/home-ru.webp' as mascot_image %}
                 <div class="public-artwork public-artwork--ru">
-                    <img src="{{ mascot_image }}?v=3" alt="Это очень просто!" width="1448" height="1086" fetchpriority="high">
-                    <img class="public-bubble-text" src="{{ mascot_image }}?v=3" alt="" width="1448" height="1086">
+                    <img src="{{ mascot_image }}" alt="Это очень просто!" width="1448" height="1086" fetchpriority="high">
+                    <img class="public-bubble-text" src="{{ mascot_image }}" alt="" width="1448" height="1086">
                 </div>
             {% else %}
-                {% static 'events/mascot/home-en.png' as mascot_image %}
+                {% static 'events/mascot/home-en.webp' as mascot_image %}
                 <div class="public-artwork">
-                    <img src="{{ mascot_image }}?v=3" alt="It’s really simple!" width="1448" height="1086" fetchpriority="high">
-                    <img class="public-bubble-text" src="{{ mascot_image }}?v=3" alt="" width="1448" height="1086">
+                    <img src="{{ mascot_image }}" alt="It’s really simple!" width="1448" height="1086" fetchpriority="high">
+                    <img class="public-bubble-text" src="{{ mascot_image }}" alt="" width="1448" height="1086">
                 </div>
             {% endif %}
         </div>

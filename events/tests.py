@@ -34,7 +34,7 @@ class TrunemoTests(TestCase):
         for language in ("en", "he", "ru"):
             with self.subTest(language=language):
                 response = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE=language)
-                self.assertContains(response, f"mascot/home-{language}.png", count=1 if language == "he" else 2)
+                self.assertContains(response, f"mascot/home-{language}.webp", count=1 if language == "he" else 2)
 
     def test_dashboard_features_last_edited_event(self):
         owner = get_user_model().objects.create_user(username="dashboard-owner")
