@@ -103,7 +103,10 @@ LOGOUT_REDIRECT_URL = 'home'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'trunemo.password_validation.LocalizedMinimumLengthValidator',
+    },
+    {
+        'NAME': 'trunemo.password_validation.EnglishPasswordValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',

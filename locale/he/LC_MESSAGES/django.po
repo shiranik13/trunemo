@@ -634,3 +634,9 @@ msgstr "נקו את הסינון"
 msgid "to record your first gift."
 msgstr "כדי לרשום את המתנה הראשונה."
 
+
+msgid "Use at least %(min_length)d characters."
+msgstr "יש להזין לפחות %(min_length)d תווים."
+
+msgid "Use only English letters, digits, and standard keyboard symbols."
+msgstr "אפשר להשתמש רק באותיות באנגלית, בספרות ובסימני מקלדת רגילים."

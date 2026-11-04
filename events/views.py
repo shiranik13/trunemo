@@ -21,8 +21,9 @@ def signup(request):
         return redirect("dashboard")
     form = SignupForm(request.POST if request.method == "POST" else None)
     if request.method == "POST" and form.is_valid():
-        login(request, form.save())
-        return redirect("dashboard")
+        with transaction.atomic():
+            login(request, form.save())
+            return redirect("dashboard")
     return render(request, "events/form.html", {
         "form": form, "title": _("Create account"), "signup_form": True,
     })

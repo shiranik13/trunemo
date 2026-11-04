@@ -634,3 +634,9 @@ msgstr "сбросьте фильтр"
 msgid "to record your first gift."
 msgstr "чтобы записать первый подарок."
 
+
+msgid "Use at least %(min_length)d characters."
+msgstr "Введите не менее %(min_length)d символов."
+
+msgid "Use only English letters, digits, and standard keyboard symbols."
+msgstr "Используйте только английские буквы, цифры и стандартные символы клавиатуры."
