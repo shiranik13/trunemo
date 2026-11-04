@@ -601,8 +601,8 @@ msgstr "רוצים לראות איך האתר נבנה? מוזמנים להצי�
 msgid "Wedding"
 msgstr "חתונה"
 
-msgid "When my best friend started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
-msgstr "כשהחברה הכי טובה שלי התחילה לתכנן את החתונה שלה, היא חיפשה דרך פשוטה, נוחה ונעימה לעין לנהל את רשימת המוזמנים והמתנות. במקום להסתבך עם טבלאות Excel אינסופיות, היא רצתה מקום אחד שבו אפשר לרכז את הכול בצורה מסודרת וידידותית."
+msgid "When a good friend of mine started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
+msgstr "כשחברה טובה שלי התחילה לתכנן את החתונה שלה, היא חיפשה דרך פשוטה, נוחה ונעימה לעין לנהל את רשימת המוזמנים והמתנות. במקום להסתבך עם טבלאות Excel אינסופיות, היא רצתה מקום אחד שבו אפשר לרכז את הכול בצורה מסודרת וידידותית."
 
 msgid "While building the site, I tried technologies and tools I had never used before, including <strong>Django, PostgreSQL and Figma</strong>. It took independent study, trial and error, problem solving and plenty of patience. Most of all, I enjoyed turning a small idea into a real product."
 msgstr "במהלך הפיתוח התנסיתי בטכנולוגיות ובכלים שלא יצא לי לעבוד איתם קודם, ביניהם <strong>Django, PostgreSQL ו-Figma</strong>. התהליך כלל לא מעט למידה עצמאית, ניסוי וטעייה, פתרון בעיות והמון סבלנות, אבל בעיקר הרבה הנאה מהאפשרות להפוך רעיון קטן למוצר אמיתי."

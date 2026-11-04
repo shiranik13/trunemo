@@ -601,8 +601,8 @@ msgstr "Хотите узнать, как сделан сайт? Загляни�
 msgid "Wedding"
 msgstr "Свадьба"
 
-msgid "When my best friend started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
-msgstr "Когда моя лучшая подруга начала планировать свадьбу, ей хотелось найти простой, удобный и приятный способ вести список гостей и подарков. Вместо бесконечных таблиц Excel ей нужно было одно место, где всё можно аккуратно собрать."
+msgid "When a good friend of mine started planning her wedding, she wanted a simple, convenient and pleasant way to manage her guest list and gifts. Instead of juggling endless Excel spreadsheets, she wanted one place to keep everything organized and easy to find."
+msgstr "Когда моя хорошая подруга начала планировать свадьбу, ей хотелось найти простой, удобный и приятный способ вести список гостей и подарков. Вместо бесконечных таблиц Excel ей нужно было одно место, где всё можно аккуратно собрать."
 
 msgid "While building the site, I tried technologies and tools I had never used before, including <strong>Django, PostgreSQL and Figma</strong>. It took independent study, trial and error, problem solving and plenty of patience. Most of all, I enjoyed turning a small idea into a real product."
 msgstr "В процессе разработки я познакомилась с новыми для себя технологиями и инструментами, в том числе с <strong>Django, PostgreSQL и Figma</strong>. Понадобились самостоятельная учёба, пробы и ошибки, решение задач и терпение. Больше всего мне понравилось превращать небольшую идею в настоящий продукт."
