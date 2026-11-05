@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load i18n static %}
 {% block body_class %}public-landing{% endblock %}
-{% block extra_head %}<link rel="stylesheet" href="{% static 'events/landing.css' %}?v=8">{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'events/landing.css' %}?v=10">{% endblock %}
 {% block guest_navigation %}
     <div class="public-nav">
-        <a href="#how-it-works">{% translate "How it works" %}</a>
+        <a href="#how-it-works">{% translate "How does it work?" %}</a>
         <a href="#demo">{% translate "See an example" %}</a>
     </div>
 {% endblock %}
@@ -12,15 +12,14 @@
 <section class="public-hero">
     <div class="shell public-grid">
         <div class="public-copy">
-            <h1>{% translate "The party is over." %}<br><em>{% translate "Now for the easy part." %}</em></h1>
-            <p>{% translate "Keep guests, gifts and split payments together. See what each event received and export the details to Excel." %}</p>
+            <h1>{% translate "Guests and gifts." %}<br><em>{% translate "All in one place." %}</em></h1>
+            <p>{% translate "Create your event, organize your guest list and keep track of monetary gifts. Record who gave what, view totals by currency and export your records to Excel." %}</p>
             <div class="actions">
                 <a class="button public-yellow" href="{% url 'signup' %}">{% translate "Create account" %}<svg class="icon direction-arrow" aria-hidden="true"><use href="#arrow"/></svg></a>
                 <a href="{% url 'login' %}">{% translate "Log in" %}</a>
             </div>
         </div>
         <div class="public-art">
-            <span class="public-orbit" aria-hidden="true"></span>
             <span class="public-star" aria-hidden="true">✦</span>
             {% if current_language == "he" %}
                 <img src="{% static 'events/mascot/home-he.webp' %}" alt="זה ממש פשוט" width="1470" height="1070" fetchpriority="high">
@@ -41,18 +40,18 @@
     </div>
 </section>
 <section id="how-it-works" class="shell public-steps">
-    <p class="public-kicker">{% translate "How it works" %}</p>
-    <h2>{% translate "As simple as it sounds." %}</h2>
+    <p class="public-kicker">{% translate "How does it work?" %}</p>
+    <h2>{% translate "From guest list to gift summary" %}</h2>
     <div class="public-cards">
-        <article><span aria-hidden="true">01</span><h3>{% translate "Organize guests" %}</h3><p>{% translate "Keep each event’s guest list grouped in one place." %}</p></article>
-        <article><span aria-hidden="true">02</span><h3>{% translate "Track split payments" %}</h3><p>{% translate "Record who paid, how they paid, and how much." %}</p></article>
-        <article><span aria-hidden="true">03</span><h3>{% translate "Export to Excel" %}</h3><p>{% translate "Download the event summary and its payment details." %}</p></article>
+        <article><span class="public-flower" aria-hidden="true">✿</span><span class="public-step-number" aria-hidden="true">01</span><h3>{% translate "Build your guest list" %}</h3><p>{% translate "Add families, friends or other groups, then enter the guests in each group. You can prepare the list before the event and record gifts later." %}</p></article>
+        <article><span class="public-flower" aria-hidden="true">✿</span><span class="public-step-number" aria-hidden="true">02</span><h3>{% translate "Record gifts and payments" %}</h3><p>{% translate "For each gift, enter the payer, amount, currency and payment method. You can add several payments and specify which guests each payer contributed for." %}</p></article>
+        <article><span class="public-flower" aria-hidden="true">✿</span><span class="public-step-number" aria-hidden="true">03</span><h3>{% translate "Export to Excel" %}</h3><p>{% translate "Download a guest list before the event or a gift report with payment details and statistics afterwards." %}</p></article>
     </div>
 </section>
 <section id="demo" class="shell public-demo public-grid">
     <div>
         <p class="public-kicker">{% translate "See an example" %}</p>
-        <h2>{% translate "See how much came in and who paid." %}</h2>
+        <h2>{% translate "See who gave what" %}</h2>
         <ul>
             <li>{% translate "Search gifts, guests or payers" %}</li>
             <li>{% translate "Filter by payment method" %}</li>
@@ -73,7 +72,7 @@
     </div>
 </section>
 <section id="why" class="shell public-closing">
-    <h2>{% translate "Ready to get your gifts in order?" %}</h2>
+    <h2>{% translate "Start with your next event" %}</h2>
     <a class="button public-yellow" href="{% url 'signup' %}">{% translate "Create account" %}</a>
 </section>
 {% endblock %}

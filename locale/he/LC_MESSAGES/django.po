@@ -292,8 +292,8 @@ msgstr "לב"
 msgid "Home"
 msgstr "בית"
 
-msgid "How it works"
-msgstr "איך זה עובד"
+msgid "How it works?"
+msgstr "איך זה עובד?"
 
 msgid "I hope it helps you stay organized, save time and make managing your event simpler and more pleasant."
 msgstr "אני מקווה שהוא יוכל לעזור גם לכם לעשות קצת סדר, לחסוך זמן ולהפוך את ניהול האירוע שלכם לנעים ופשוט יותר."
@@ -640,3 +640,75 @@ msgstr "יש להזין לפחות %(min_length)d תווים."
 
 msgid "Use only English letters, digits, and standard keyboard symbols."
 msgstr "אפשר להשתמש רק באותיות באנגלית, בספרות ובסימני מקלדת רגילים."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+msgid "Guests and gifts."
+msgstr "האורחים והמתנות של האירוע."
+
+
+msgid "All in one place."
+msgstr "הכול במקום אחד."
+
+
+msgid "Create your event, organize your guest list and keep track of monetary gifts. Record who gave what, view totals by currency and export your records to Excel."
+msgstr "יוצרים אירוע, מכינים רשימת אורחים ומנהלים את המתנות הכספיות שמתקבלות. אפשר לראות מי נתן וכמה, לצפות בסיכומים לפי מטבע ולהוריד את הנתונים ל-Excel."
+
+
+msgid "From guest list to gift summary"
+msgstr "מרשימת האורחים ועד סיכום המתנות"
+
+
+msgid "Build your guest list"
+msgstr "מכינים רשימת אורחים"
+
+
+msgid "Add families, friends or other groups, then enter the guests in each group. You can prepare the list before the event and record gifts later."
+msgstr "מוסיפים קבוצות, כמו משפחות או חברים, ומזינים את שמות האורחים בכל קבוצה. אפשר להכין את הרשימה לפני האירוע ולהוסיף את המתנות בהמשך."
+
+
+msgid "Record gifts and payments"
+msgstr "רושמים מתנות ותשלומים"
+
+
+msgid "For each gift, enter the payer, amount, currency and payment method. You can add several payments and specify which guests each payer contributed for."
+msgstr "לכל מתנה מזינים משלם, סכום, מטבע ואמצעי תשלום. אפשר להוסיף כמה תשלומים ולציין עבור אילו אורחים כל משלם נתן כסף."
+
+
+msgid "Download a guest list before the event or a gift report with payment details and statistics afterwards."
+msgstr "לפני האירוע אפשר להוריד את רשימת האורחים. אחרי רישום המתנות אפשר להוריד גם דוח עם פרטי התשלומים וסטטיסטיקות."
+
+
+msgid "See who gave what"
+msgstr "רואים מי נתן וכמה"
+
+
+msgid "Start with your next event"
+msgstr "מתחילים עם האירוע שלכם"
+
+
+msgid "How does it work?"
+msgstr "איך זה עובד?"

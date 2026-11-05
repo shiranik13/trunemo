@@ -16,7 +16,12 @@
     <meta property="og:image:alt" content="Trunemo">
     <link rel="icon" type="image/png" href="{% static 'events/app-icon.png' %}?v=2">
     <link rel="preload" as="image" href="{% static 'events/app-icon.png' %}?v=2">
-    <link rel="stylesheet" href="{% static 'events/style.css' %}?v=31">
+    {% if current_language == "he" %}
+        <link rel="preload" as="font" type="font/ttf" href="{% static 'events/fonts/noto-sans-hebrew.ttf' %}" crossorigin>
+    {% else %}
+        <link rel="preload" as="font" type="font/ttf" href="{% static 'events/fonts/noto-sans.ttf' %}" crossorigin>
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'events/style.css' %}?v=33">
     <script src="{% static 'events/icon-picker.js' %}?v=4" defer></script>
     {% block extra_head %}{% endblock %}
 </head>

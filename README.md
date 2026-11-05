@@ -15,7 +15,7 @@
 
 <br>
 
-<img src="docs/screenshots/homepage.png" alt="Trunemo landing page, featuring the purple elephant mascot" width="850">
+<img src="docs/screenshots/homepage.jpg" alt="Trunemo landing page, featuring the purple elephant mascot" width="850">
 
 </div>
 
@@ -50,25 +50,25 @@ The project was built as a personal learning and portfolio project by **Shiran K
 
 A quick overview of events, guest counts, gifts, the most recently edited event, and recent gifts.
 
-<img src="docs/screenshots/dashboard.png" alt="Event dashboard with overview cards and recent gifts" width="850">
+<img src="docs/screenshots/dashboard.jpg" alt="Event dashboard with overview cards and recent gifts" width="850">
 
 ### 2. Guest groups
 
 Organize invitees into custom groups and manage the guests within each one.
 
-<img src="docs/screenshots/guest-groups.png" alt="Event detail page showing guest groups" width="850">
+<img src="docs/screenshots/guest-groups.jpg" alt="Event detail page showing guest groups" width="850">
 
 ### 3. Gifts and split payments
 
 Keep gift records, payers, payment methods, and amounts together.
 
-<img src="docs/screenshots/gift-tracking.png" alt="Gift list showing multiple payers, payment methods and currencies" width="850">
+<img src="docs/screenshots/gift-tracking.jpg" alt="Gift list showing multiple payers, payment methods and currencies" width="850">
 
 ### 4. Statistics
 
-See per-currency totals and a breakdown by payment method.
+See per-currency totals and a breakdown by payment method. Amounts in different currencies remain separate.
 
-<img src="docs/screenshots/statistics.png" alt="Event statistics dashboard" width="850">
+<img src="docs/screenshots/statistics.jpg" alt="Event statistics dashboard" width="850">
 
 ### 5. Excel reports
 
@@ -85,7 +85,7 @@ Export readable spreadsheets with payment details and summary statistics.
   </tr>
 </table>
 
-*Screenshots use sample event and guest data.*
+*Application screenshots show the current interface with fictional event and guest data from an isolated local preview database. The Excel screenshots illustrate the exported workbook layout.*
 
 ## 🧰 Tech stack
 
@@ -110,6 +110,14 @@ Export readable spreadsheets with payment details and summary statistics.
 
 The [live site](https://trunemo.onrender.com/) also includes a **See an example** section with illustrative sample data.
 
+## 🎨 Interface and typography
+
+The public homepage uses Trunemo’s purple, lavender, cream, and yellow palette, with a responsive two-column introduction, a three-step feature section, and a sample gift report. The copy is available in English, Hebrew, and Russian.
+
+Shared colors, spacing, corner radii, and font settings are defined in `events/static/events/style.css`. Homepage layout and responsive rules are grouped in `events/static/events/landing.css`.
+
+The interface uses locally hosted **Noto Sans**, with **Noto Sans Hebrew** for Hebrew. Font licenses are included alongside the files in `events/static/events/fonts/`.
+
 ## ⚙️ Run locally
 
 ### Prerequisites
@@ -127,7 +135,7 @@ cd trunemo
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe manage.py migrate
-.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8011
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
 ```
 
 ### macOS / Linux
@@ -140,10 +148,10 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python manage.py migrate
-python manage.py runserver 127.0.0.1:8011
+python manage.py runserver 127.0.0.1:8000
 ```
 
-Open **http://127.0.0.1:8011/**, create an account, and start with an event.
+Open **http://127.0.0.1:8000/**, create an account, and start with an event.
 
 **Database default:** If `POSTGRES_DB` is not set, the standard development settings use a local SQLite database (`db.sqlite3`).
 
@@ -172,7 +180,7 @@ $credential = Get-Credential -UserName $env:POSTGRES_USER
 $env:POSTGRES_PASSWORD = $credential.GetNetworkCredential().Password
 
 .\.venv\Scripts\python.exe manage.py migrate
-.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8011
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
 ```
 
 You can inspect the database using a tool such as **DBeaver**. The project uses Django's ORM for model-based data access.

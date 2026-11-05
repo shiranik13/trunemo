@@ -640,3 +640,79 @@ msgstr "Введите не менее %(min_length)d символов."
 
 msgid "Use only English letters, digits, and standard keyboard symbols."
 msgstr "Используйте только английские буквы, цифры и стандартные символы клавиатуры."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+msgid "How it works?"
+msgstr "Как это работает?"
+
+
+msgid "Guests and gifts."
+msgstr "Гости и подарки."
+
+
+msgid "All in one place."
+msgstr "Всё в одном месте."
+
+
+msgid "Create your event, organize your guest list and keep track of monetary gifts. Record who gave what, view totals by currency and export your records to Excel."
+msgstr "Создайте событие, составьте список гостей и записывайте денежные подарки. Смотрите, кто сколько подарил, проверяйте итоги по каждой валюте и выгружайте данные в Excel."
+
+
+msgid "From guest list to gift summary"
+msgstr "От списка гостей до отчёта о подарках"
+
+
+msgid "Build your guest list"
+msgstr "Составьте список гостей"
+
+
+msgid "Add families, friends or other groups, then enter the guests in each group. You can prepare the list before the event and record gifts later."
+msgstr "Создавайте группы для семей, друзей и других гостей, затем добавляйте в них имена. Список можно подготовить до события, а подарки записать позже."
+
+
+msgid "Record gifts and payments"
+msgstr "Записывайте подарки и платежи"
+
+
+msgid "For each gift, enter the payer, amount, currency and payment method. You can add several payments and specify which guests each payer contributed for."
+msgstr "Для каждого подарка укажите плательщика, сумму, валюту и способ оплаты. Можно добавить несколько платежей и отметить, за кого из гостей внёс деньги каждый плательщик."
+
+
+msgid "Download a guest list before the event or a gift report with payment details and statistics afterwards."
+msgstr "До события можно скачать список гостей. Когда подарки будут записаны, можно выгрузить отчёт с платежами и статистикой."
+
+
+msgid "See who gave what"
+msgstr "Смотрите, кто сколько подарил"
+
+
+msgid "Start with your next event"
+msgstr "Начните со своего события"
+
+
+msgid "How does it work?"
+msgstr "Как это работает?"
