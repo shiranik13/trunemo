@@ -74,7 +74,10 @@ class GroupForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["icon"].choices = [("", _("Automatic")), *GuestGroup.Icon.choices]
+        icons = [(value, label) for value, label in GuestGroup.Icon.choices if value != GuestGroup.Icon.BABY]
+        self.fields["icon"].choices = [("", _("Automatic")), *icons]
+        if self.instance.icon == GuestGroup.Icon.BABY:
+            self.initial["icon"] = ""
 
     def clean_icon(self):
         icon = self.cleaned_data["icon"]
@@ -82,7 +85,8 @@ class GroupForm(forms.ModelForm):
             return icon
         groups = GuestGroup.objects.filter(event_id=self.instance.event_id)
         used = set(groups.values_list("icon", flat=True))
-        return choice([value for value in GuestGroup.Icon.values if value not in used] or GuestGroup.Icon.values)
+        available = [value for value, label in self.fields["icon"].choices if value]
+        return choice([value for value in available if value not in used] or available)
 
 
 class GuestForm(forms.ModelForm):
@@ -141,12 +145,22 @@ class GroupGuestFormSet(forms.BaseFormSet):
             form.fields["covered"].choices = [
                 (str(row), name)
                 for row in range(self.total_form_count())
-                if (name := self.data.get(f"{self.prefix}-{row}-name", "").strip())
+                if not form.fields["DELETE"].clean(self.data.get(f"{self.prefix}-{row}-DELETE"))
+                and (name := self.data.get(f"{self.prefix}-{row}-name", "").strip())
             ]
 
 
+    def clean(self):
+        super().clean()
+        if any(self.errors):
+            return
+        if not any(entry.get("name") and not entry.get("DELETE") for entry in self.cleaned_data):
+            raise forms.ValidationError(_("Add at least one guest before saving the group."))
+
+
 GroupGuestEntries = forms.formset_factory(
-    GroupGuestEntry, formset=GroupGuestFormSet, extra=3, max_num=100, validate_max=True,
+    GroupGuestEntry, formset=GroupGuestFormSet, extra=0, min_num=1, validate_min=True,
+    max_num=100, validate_max=True, can_delete=True,
 )
 
 

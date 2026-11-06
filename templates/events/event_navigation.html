@@ -1,0 +1,5 @@
+{% load i18n %}
+<nav class="event-navigation" aria-label="{% translate 'Event navigation' %}">
+    <a href="{% url 'event_detail' event.pk %}"{% if active == 'guests' %} aria-current="page"{% endif %}>{% translate "Guest groups" %}</a>
+    <a href="{% url 'event_actions' event.pk %}"{% if active == 'gifts' %} aria-current="page"{% endif %}>{% translate "Gifts and payments" %}</a>
+</nav>

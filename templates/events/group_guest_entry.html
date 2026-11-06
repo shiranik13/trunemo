@@ -1,7 +1,9 @@
 {% load i18n %}
-<fieldset class="group-guest-entry" data-guest-row>
+<fieldset class="group-guest-entry" data-guest-row{% if entry.DELETE.value %} data-deleted hidden{% endif %}>
+    {{ entry.DELETE.as_hidden }}
     <div data-guest-details>
         {{ entry.name.as_field_group }}
+        <button class="danger-link guest-remove" type="button" data-remove-row>{% translate "Remove guest" %}</button>
         {{ entry.payer.errors }}
         <label class="payer-check" for="{{ entry.payer.id_for_label }}">{{ entry.payer }} {{ entry.payer.label }}</label>
     </div>

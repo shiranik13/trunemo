@@ -6,8 +6,14 @@
 <div class="heading page-heading">
     <div>
         <h1>{{ event.name }}</h1>
+        {% if event.event_date or event.venue %}
+            <div class="event-meta">
+                {% if event.event_date %}<span><svg class="icon" aria-hidden="true"><use href="#calendar"/></svg> <time datetime="{{ event.event_date|date:'Y-m-d' }}">{{ event.event_date|date:"DATE_FORMAT" }}</time></span>{% endif %}
+                {% if event.venue %}<span>{% translate "Venue" %} · {{ event.venue }}</span>{% endif %}
+            </div>
+        {% endif %}
     </div>
-    <div class="actions"><a class="button secondary" href="{% url 'event_detail' event.pk %}">{% translate "Guest groups" %}</a>
+    <div class="actions">
         <a class="button secondary" href="{% url 'event_statistics' event.pk %}{% if currency %}?currency={{ currency }}{% endif %}"><svg class="icon" aria-hidden="true"><use href="#wallet"/></svg> {% translate "Statistics" %}</a>
         <a class="button secondary" href="{% url 'event_export' event.pk %}{% if is_filtered %}?{{ request.GET.urlencode }}{% endif %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export Excel" %}</a>
         <details class="disclosure">
@@ -19,6 +25,7 @@
         </details>
     </div>
 </div>
+{% include "events/event_navigation.html" with active="gifts" %}
     <section class="panel ledger" aria-labelledby="gifts-title">
         <div class="heading section-heading">
             <div><h2 id="gifts-title">{% translate "Gifts" %}</h2></div>

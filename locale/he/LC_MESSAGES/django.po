@@ -712,3 +712,17 @@ msgstr "מתחילים עם האירוע שלכם"
 
 msgid "How does it work?"
 msgstr "איך זה עובד?"
+
+
+msgid "Remove guest"
+msgstr "הסרת אורח"
+
+
+msgid "Add at least one guest before saving the group."
+msgstr "יש להוסיף לפחות אורח אחד לפני שמירת הקבוצה."
+
+msgid "Event navigation"
+msgstr "ניווט באירוע"
+
+msgid "Gifts and payments"
+msgstr "מתנות ותשלומים"

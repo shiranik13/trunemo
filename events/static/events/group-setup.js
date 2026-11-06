@@ -21,9 +21,34 @@ function updatePaymentRows(row, payments = true) {
     }
 }
 
-for (const row of rows.children) updatePaymentRows(row);
+function activeRows() {
+    return Array.from(rows.children).filter((row) => !row.hasAttribute("data-deleted"));
+}
+
+function updateGuestControls() {
+    const guests = activeRows();
+    for (const row of guests) row.querySelector("[data-remove-row]").disabled = guests.length <= 1;
+    add.hidden = setup.querySelector("[data-group-details]").hidden || guests.length >= 100 || Number(total.value) >= 1100;
+}
+
+for (const row of activeRows()) updatePaymentRows(row);
 
 rows.addEventListener("click", (event) => {
+    const remove = event.target.closest("[data-remove-row]");
+    if (remove) {
+        if (activeRows().length <= 1) return;
+        const row = remove.closest("[data-guest-row]");
+        row.setAttribute("data-deleted", "");
+        row.hidden = true;
+        for (const field of row.querySelectorAll("input, select")) field.disabled = true;
+        const deletion = row.querySelector('input[name$="-DELETE"]');
+        deletion.disabled = false;
+        deletion.value = "on";
+        updateCoveredGuests();
+        showStep(false);
+        activeRows().at(-1).querySelector('input[type="text"]').focus();
+        return;
+    }
     const button = event.target.closest("[data-add-payment]");
     if (!button) return;
     const row = button.closest("[data-guest-row]");
@@ -35,7 +60,7 @@ rows.addEventListener("click", (event) => {
 });
 
 function updateCoveredGuests() {
-    const guestRows = Array.from(rows.children);
+    const guestRows = activeRows();
     const payers = guestRows.filter((row) => row.querySelector(payerSelector).checked);
     for (const row of guestRows) {
         const field = row.querySelector("[data-covered]");
@@ -44,14 +69,15 @@ function updateCoveredGuests() {
         field.hidden = payers.length < 2;
         options.replaceChildren();
         if (field.hidden) continue;
-        guestRows.forEach((guest, index) => {
+        guestRows.forEach((guest) => {
             const name = guest.querySelector('input[type="text"]').value.trim();
             if (!name) return;
             const input = document.createElement("input");
             input.type = "checkbox";
             input.name = field.dataset.fieldName;
+            const index = guest.querySelector('input[type="text"]').name.split("-")[1];
             input.value = index;
-            input.checked = checked.has(String(index));
+            input.checked = checked.has(index);
             const label = document.createElement("label");
             label.append(input, " ", name);
             options.append(label);
@@ -63,7 +89,7 @@ function showStep(payments) {
     setup.querySelector("[data-group-details]").hidden = payments;
     setup.querySelector("[data-group-notes]").hidden = payments;
     setup.querySelector("[data-payment-heading]").hidden = !payments;
-    for (const row of rows.children) {
+    for (const row of activeRows()) {
         const selected = row.querySelector(payerSelector).checked;
         row.hidden = payments && !selected;
         row.querySelector("[data-guest-details]").hidden = payments;
@@ -71,8 +97,8 @@ function showStep(payments) {
         row.querySelector("[data-payer-name]").textContent = row.querySelector('input[type="text"]').value;
         updatePaymentRows(row, payments);
     }
-    add.hidden = payments || Number(total.value) >= 100;
-    next.hidden = payments || !rows.querySelector(payerSelector + ":checked");
+    updateGuestControls();
+    next.hidden = payments || !activeRows().some((row) => row.querySelector(payerSelector).checked);
     back.hidden = !payments;
     save.hidden = !payments;
     saveWithoutPayments.hidden = payments;
@@ -81,7 +107,7 @@ function showStep(payments) {
 }
 
 if (setup.hasAttribute("data-submitted")) {
-    for (const row of rows.children) {
+    for (const row of activeRows()) {
         row.querySelector("[data-guest-payment]").hidden = !row.querySelector(payerSelector).checked;
     }
 } else {
@@ -91,10 +117,10 @@ rows.addEventListener("change", (event) => {
     if (event.target.matches(payerSelector)) showStep(false);
 });
 
-add.hidden = Number(total.value) >= 100;
+updateGuestControls();
 add.addEventListener("click", () => {
     const index = Number(total.value);
-    if (index >= 100) return;
+    if (activeRows().length >= 100 || index >= 1100) return;
     rows.insertAdjacentHTML("beforeend", template.innerHTML.replaceAll("__prefix__", index));
     total.value = index + 1;
     updatePaymentRows(rows.lastElementChild);
@@ -104,9 +130,9 @@ add.addEventListener("click", () => {
 
 next.addEventListener("click", () => {
     for (const field of setup.querySelectorAll("[data-group-details] input, [data-guest-details] input")) {
-        if (!field.reportValidity()) return;
+        if (!field.disabled && !field.reportValidity()) return;
     }
-    for (const row of rows.children) {
+    for (const row of activeRows()) {
         const name = row.querySelector('input[type="text"]');
         if (row.querySelector(payerSelector).checked && !name.value.trim()) {
             name.required = true;

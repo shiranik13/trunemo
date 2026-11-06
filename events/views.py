@@ -214,18 +214,18 @@ def manage_group(request, event_id, group_id=None, delete=False):
         guest_data = data.copy()
         for key in data:
             parts = key.split("-", 2)
-            if len(parts) == 3 and parts[0] == "guests" and parts[1].isdecimal() and parts[2] != "name":
+            if len(parts) == 3 and parts[0] == "guests" and parts[1].isdecimal() and parts[2] not in ("name", "DELETE"):
                 guest_data.pop(key)
     entries = GroupGuestEntries(guest_data, prefix="guests")
     if data is not None:
-        entries_valid = entries.is_valid() if "guests-TOTAL_FORMS" in data else True
+        entries_valid = entries.is_valid()
         if form.is_valid() and entries_valid:
             with transaction.atomic():
                 group = form.save()
                 guests = {}
                 payers = []
-                for index, entry in enumerate(entries.cleaned_data if "guests-TOTAL_FORMS" in data else []):
-                    if not entry.get("name"):
+                for index, entry in enumerate(entries.cleaned_data):
+                    if entry.get("DELETE") or not entry.get("name"):
                         continue
                     guest = Guest.objects.create(group=group, name=entry["name"])
                     guests[str(index)] = guest

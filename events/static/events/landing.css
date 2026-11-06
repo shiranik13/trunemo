@@ -104,22 +104,7 @@
     transform: rotate(-5deg);
     clip-path: polygon(0 0, 12% 4%, 25% 0, 38% 4%, 50% 0, 63% 4%, 75% 0, 88% 4%, 100% 0, 96% 13%, 100% 25%, 96% 38%, 100% 50%, 96% 63%, 100% 75%, 96% 88%, 100% 100%, 88% 96%, 75% 100%, 63% 96%, 50% 100%, 38% 96%, 25% 100%, 12% 96%, 0 100%, 4% 88%, 0 75%, 4% 63%, 0 50%, 4% 38%, 0 25%, 4% 13%);
 }
-.public-art img { width: 100%; height: auto; filter: drop-shadow(0 .6rem .2rem #70409920); }
-.public-artwork { position: relative; width: 100%; }
-.public-artwork > img { display: block; }
-.public-artwork > img:first-child { transform: scaleX(-1); }
-/* Mirror the illustration, then restore only the lettering area from the source. */
-.public-artwork > .public-bubble-text {
-    position: absolute;
-    inset: 0;
-    filter: none;
-    clip-path: inset(20% 5.5% 57% 62.5% round 5%);
-    transform: translateX(-57%);
-}
-.public-artwork--ru > .public-bubble-text {
-    clip-path: inset(20% 6% 57% 62% round 5%);
-    transform: translateX(-56%);
-}
+.public-art img { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 .6rem .2rem #70409920); }
 .public-star {
     position: absolute;
     inset-inline-end: -1rem;

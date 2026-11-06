@@ -33,9 +33,9 @@ The project was built as a personal learning and portfolio project by **Shiran K
 | --- | --- |
 | **Accounts** | User registration, login, and event ownership |
 | **Event management** | Create, edit, and organize multiple events, with names, dates, venues, notes, and optional icons |
-| **Guest groups** | Group guests by family, friends, or any custom label, with illustrated group avatars |
+| **Guest groups** | Group guests by family, friends, or any custom label; choose illustrated avatars and add or remove guests, starting with one |
 | **Guest records** | Add and manage individual guests within groups |
-| **Gift tracking** | Record gifts and associate them with one or more recipients |
+| **Gift tracking** | Record monetary gifts and specify which guests each payer contributed for |
 | **Split payments** | Track multiple payments per gift, including payer, covered guests, amount, currency, and payment method |
 | **Search & filters** | Find gifts, guests, and payers; filter gift records by group, payment method, and currency |
 | **Statistics** | View received amounts and payment-method breakdowns |
@@ -54,7 +54,7 @@ A quick overview of events, guest counts, gifts, the most recently edited event,
 
 ### 2. Guest groups
 
-Organize invitees into custom groups and manage the guests within each one.
+Organize invitees into custom groups and manage the guests within each one. The **Guest groups** and **Gifts and payments** tabs stay in the same place on both event screens, with the current section highlighted. Guest-list export is available above the tabs.
 
 <img src="docs/screenshots/guest-groups.jpg" alt="Event detail page showing guest groups" width="850">
 
@@ -104,7 +104,7 @@ Export readable spreadsheets with payment details and summary statistics.
 1. **Create an account** and sign in.
 2. **Create an event** with its own name and details.
 3. **Add guest groups** and the individual guests belonging to each group.
-4. **Record a gift** and choose its recipients.
+4. **Open Gifts and payments** to review gifts, or add a gift from its guest group. You can prepare groups before the event and record payments later.
 5. **Track payments** individually, including who paid, for whom, how much, how, and in which currency.
 6. **Review statistics** and **download Excel reports** when needed.
 
@@ -112,7 +112,7 @@ The [live site](https://trunemo.onrender.com/) also includes a **See an example*
 
 ## 🎨 Interface and typography
 
-The public homepage uses Trunemo’s purple, lavender, cream, and yellow palette, with a responsive two-column introduction, a three-step feature section, and a sample gift report. The copy is available in English, Hebrew, and Russian.
+The public homepage uses Trunemo’s purple, lavender, cream, and yellow palette, with a responsive two-column introduction, a three-step feature section, and a sample gift report. The copy is available in English, Hebrew, and Russian. Sample amounts use dollars in English, shekels in Hebrew, and rubles in Russian. Event and group icon pickers show a full row of suggestions, with more choices available on expansion.
 
 Shared colors, spacing, corner radii, and font settings are defined in `events/static/events/style.css`. Homepage layout and responsive rules are grouped in `events/static/events/landing.css`.
 

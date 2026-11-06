@@ -716,3 +716,17 @@ msgstr "Начните со своего события"
 
 msgid "How does it work?"
 msgstr "Как это работает?"
+
+
+msgid "Remove guest"
+msgstr "Удалить гостя"
+
+
+msgid "Add at least one guest before saving the group."
+msgstr "Добавьте хотя бы одного гостя перед сохранением группы."
+
+msgid "Event navigation"
+msgstr "Навигация по событию"
+
+msgid "Gifts and payments"
+msgstr "Подарки и платежи"

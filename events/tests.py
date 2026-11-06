@@ -34,7 +34,14 @@ class TrunemoTests(TestCase):
         for language in ("en", "he", "ru"):
             with self.subTest(language=language):
                 response = self.client.get(reverse("home"), HTTP_ACCEPT_LANGUAGE=language)
-                self.assertContains(response, f"mascot/home-{language}.webp", count=1 if language == "he" else 2)
+                self.assertContains(response, f"mascot/home-{language}.webp", count=1)
+                expected_amounts = {
+                    "en": ("$2,500", "$1,200", "$800", "$500"),
+                    "he": ("₪2,500", "₪1,200", "₪800", "₪500"),
+                    "ru": ("2 500 ₽", "1 200 ₽", "800 ₽", "500 ₽"),
+                }
+                for amount in expected_amounts[language]:
+                    self.assertContains(response, f"<bdi>{amount}</bdi>")
 
     def test_dashboard_features_last_edited_event(self):
         owner = get_user_model().objects.create_user(username="dashboard-owner")
@@ -50,7 +57,9 @@ class TrunemoTests(TestCase):
         self.assertEqual(response.context["featured_event"], older)
         self.assertContains(response, "<time datetime=")
         newer = Event.objects.get(name="Newer")
-        self.client.post(reverse("group_add", args=[newer.pk]), {"name": "Friends"})
+        self.client.post(reverse("group_add", args=[newer.pk]), {
+            "name": "Friends", "guests-TOTAL_FORMS": "1", "guests-INITIAL_FORMS": "0", "guests-0-name": "Ari",
+        })
         self.assertEqual(self.client.get(dashboard).context["featured_event"], newer)
 
     def test_guest_export_contains_notes_without_payment_data(self):
@@ -75,7 +84,9 @@ class TrunemoTests(TestCase):
         url = reverse("group_add", args=[event.pk])
         self.assertContains(self.client.get(url), 'avatar--best-friends')
         for name, icon in [("Friends", "friends"), ("Family", ""), ("Work", "")]:
-            self.client.post(url, {"name": name, "icon": icon})
+            self.client.post(url, {
+                "name": name, "icon": icon, "guests-TOTAL_FORMS": "1", "guests-INITIAL_FORMS": "0", "guests-0-name": "Ari",
+            })
         icons = dict(event.groups.values_list("name", "icon"))
         self.assertEqual(icons["Friends"], "friends")
         self.assertEqual(len(set(icons.values())), 3)
@@ -94,10 +105,12 @@ class TrunemoTests(TestCase):
         self.client.post(reverse("event_add"), {"name": "Birthday party", "event_type": "Birthday"})
         event = Event.objects.get(name="Birthday party")
         self.assertEqual(event.owner.username, "event-owner")
-        self.client.post(reverse("group_add", args=[event.pk]), {"name": "Family"})
+        self.client.post(reverse("group_add", args=[event.pk]), {
+            "name": "Family", "guests-TOTAL_FORMS": "1", "guests-INITIAL_FORMS": "0", "guests-0-name": "Noa Cohen",
+        })
         group = event.groups.get()
         group_args = [event.pk, group.pk]
-        for name in ("Noa Cohen", "Noa Levy"):
+        for name in ("Noa Levy",):
             self.client.post(reverse("guest_add", args=group_args), {"name": name})
         first, second = group.guests.all()
         add_url = reverse("gift_add", args=group_args)
@@ -275,3 +288,41 @@ class TrunemoTests(TestCase):
         restricted = self.client.post(reverse("guest_delete", args=[event.pk, group.pk, guest.pk]))
         self.assertContains(restricted, "Update that payment first")
         self.assertTrue(Guest.objects.filter(pk=guest.pk).exists())
+
+
+    def test_new_group_requires_a_named_guest_and_omits_retired_icon(self):
+        owner = get_user_model().objects.create_user(username="group-minimum")
+        event = Event.objects.create(name="Party", owner=owner)
+        self.client.force_login(owner)
+        url = reverse("group_add", args=[event.pk])
+        response = self.client.get(url)
+        self.assertEqual(len(response.context["entries"].forms), 1)
+        self.assertNotIn("baby", dict(response.context["form"].fields["icon"].choices))
+        for data in [
+            {"name": "Empty"},
+            {"name": "Empty", "guests-TOTAL_FORMS": "0", "guests-INITIAL_FORMS": "0"},
+            {"name": "Empty", "guests-TOTAL_FORMS": "1", "guests-INITIAL_FORMS": "0", "guests-0-name": "   "},
+            {"name": "Empty", "guests-TOTAL_FORMS": "1", "guests-INITIAL_FORMS": "0", "guests-0-name": "Ari", "guests-0-DELETE": "on"},
+        ]:
+            with self.subTest(data=data):
+                response = self.client.post(url, data)
+                self.assertEqual(response.status_code, 200)
+                self.assertFalse(event.groups.exists())
+
+    def test_removed_guest_does_not_shift_payment_coverage(self):
+        owner = get_user_model().objects.create_user(username="group-remove")
+        event = Event.objects.create(name="Party", owner=owner)
+        self.client.force_login(owner)
+        response = self.client.post(reverse("group_add", args=[event.pk]), {
+            "name": "Family", "guests-TOTAL_FORMS": "3", "guests-INITIAL_FORMS": "0",
+            "guests-0-DELETE": "on",
+            "guests-1-name": "Ari", "guests-1-DELETE": "False", "guests-1-payer": "on",
+            "guests-1-amount": "100", "guests-1-method": "cash", "guests-1-covered": ["1", "2"],
+            "guests-2-name": "Lee", "guests-2-DELETE": "False",
+        })
+        self.assertRedirects(response, reverse("event_detail", args=[event.pk]))
+        group = event.groups.get()
+        self.assertCountEqual(group.guests.values_list("name", flat=True), ["Ari", "Lee"])
+        payment = group.gifts.get().payments.get()
+        self.assertEqual(payment.payer.name, "Ari")
+        self.assertCountEqual(payment.covered_guests.values_list("name", flat=True), ["Ari", "Lee"])

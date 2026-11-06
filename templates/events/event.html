@@ -14,7 +14,9 @@
         {% endif %}
     </div>
     <div class="actions">
-        <a class="button secondary" href="{% url 'event_actions' event.pk %}">{% translate "Actions" %}</a>
+        {% if groups %}
+            <a class="button secondary" href="{% url 'guest_export' event.pk %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export guest list to Excel" %}</a>
+        {% endif %}
         <details class="disclosure">
             <summary class="button secondary">{% translate "Manage event" %} <svg class="icon" aria-hidden="true"><use href="#chevron"/></svg></summary>
             <div class="disclosure-panel">
@@ -24,6 +26,7 @@
         </details>
     </div>
 </div>
+{% include "events/event_navigation.html" with active="guests" %}
 {% if event.notes %}
     <section class="panel event-notes" aria-label="{% translate 'Event notes' %}">
         <h2>{% translate "Event notes" %}</h2>
@@ -65,12 +68,8 @@
             <p class="group-empty muted">{% translate "Add a group such as Family or Friends, then add the guests who belong to it." %}</p>
         {% endfor %}
     </section>
-    <div class="actions">
-        {% if groups %}
-            <a class="button secondary" href="{% url 'guest_export' event.pk %}"><svg class="icon" aria-hidden="true"><use href="#download"/></svg> {% translate "Export guest list to Excel" %}</a>
-        {% else %}
-            <p class="muted">{% translate "Add a guest group before exporting the guest list." %}</p>
-        {% endif %}
-    </div>
+    {% if not groups %}
+        <p class="muted">{% translate "Add a guest group before exporting the guest list." %}</p>
+    {% endif %}
 {% endblock %}
 
